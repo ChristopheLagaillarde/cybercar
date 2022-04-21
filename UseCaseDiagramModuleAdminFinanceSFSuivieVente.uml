@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_DhAGoFmAEeysRbzOFE1yaw" name="UseCaseDiagramModuleAdminFinanceSFSuivieVente">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_Dy3SsFmAEeysRbzOFE1yaw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_I8h7MFmAEeysRbzOFE1yaw" name="ApplicationCyberCar">
+    <packagedElement xmi:type="uml:Actor" xmi:id="_k8BE4FmAEeysRbzOFE1yaw" name="AdminFinance"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_9ngRwFmBEeysRbzOFE1yaw" name="Vendeur"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_TXNC8FmDEeysRbzOFE1yaw" name="ModuleAdminFinance">
+      <packagedElement xmi:type="uml:Component" xmi:id="_bDagsFmDEeysRbzOFE1yaw" name="SFSuivieVente" useCase="_N5tDAFmEEeysRbzOFE1yaw _UL-5YFmEEeysRbzOFE1yaw">
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_N5tDAFmEEeysRbzOFE1yaw" name="Afficher suivie vente" subject="_bDagsFmDEeysRbzOFE1yaw"/>
+        <ownedUseCase xmi:type="uml:UseCase" xmi:id="_UL-5YFmEEeysRbzOFE1yaw" name="Mettre à Jour suivie vente" subject="_bDagsFmDEeysRbzOFE1yaw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_zlcsEFmDEeysRbzOFE1yaw" name="Se connecte">
+        <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="__iIggFmDEeysRbzOFE1yaw" name="ExtensionPoint1"/>
+        <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_MBeWEVmEEeysRbzOFE1yaw" name="ExtensionPoint2"/>
+        <include xmi:type="uml:Include" xmi:id="_HC2tkFsREeyFOoE3CQutKA" addition="_xouHQFsQEeyFOoE3CQutKA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_3JkTEFmDEeysRbzOFE1yaw" name="Message echec connection">
+        <extend xmi:type="uml:Extend" xmi:id="__hBtQFmDEeysRbzOFE1yaw" extendedCase="_zlcsEFmDEeysRbzOFE1yaw" extensionLocation="__iIggFmDEeysRbzOFE1yaw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_CbmA8FmEEeysRbzOFE1yaw" name="Message connection réussi">
+        <extend xmi:type="uml:Extend" xmi:id="_MBeWEFmEEeysRbzOFE1yaw" extendedCase="_zlcsEFmDEeysRbzOFE1yaw" extensionLocation="_MBeWEVmEEeysRbzOFE1yaw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_xouHQFsQEeyFOoE3CQutKA" name="Sauvegarde log"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_j21eIFmDEeysRbzOFE1yaw" name="ModuleVente">
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_szAH4FmDEeysRbzOFE1yaw" name="Confirme une vente">
+        <include xmi:type="uml:Include" xmi:id="_NHXxkFsNEeyFOoE3CQutKA" addition="_UL-5YFmEEeysRbzOFE1yaw"/>
+        <include xmi:type="uml:Include" xmi:id="_XKIvoFsQEeyFOoE3CQutKA" addition="_Q-cCYFsQEeyFOoE3CQutKA"/>
+        <include xmi:type="uml:Include" xmi:id="_g7Z1YFsQEeyFOoE3CQutKA" addition="_ZgQScFsQEeyFOoE3CQutKA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_pKiW8FmEEeysRbzOFE1yaw" name="Se connecter">
+        <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_WnKs8FmFEeysRbzOFE1yaw" name="ExtensionPoint2"/>
+        <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_Dj53QFsNEeyFOoE3CQutKA" name="ExtensionPoint2"/>
+        <include xmi:type="uml:Include" xmi:id="_woARIFsQEeyFOoE3CQutKA" addition="_ZgQScFsQEeyFOoE3CQutKA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_zdYfwFmEEeysRbzOFE1yaw" name="Message connection réussi">
+        <extend xmi:type="uml:Extend" xmi:id="_DjwGQFsNEeyFOoE3CQutKA" extendedCase="_pKiW8FmEEeysRbzOFE1yaw" extensionLocation="_Dj53QFsNEeyFOoE3CQutKA"/>
+        <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_5sftYFmEEeysRbzOFE1yaw" name="ExtensionPoint1"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_N2Q4AFmFEeysRbzOFE1yaw" name="Message echec connection"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_Q-cCYFsQEeyFOoE3CQutKA" name="Générer facture"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_ZgQScFsQEeyFOoE3CQutKA" name="Sauvegarde log"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_gsmhUFmEEeysRbzOFE1yaw" memberEnd="_gs3AAFmEEeysRbzOFE1yaw _gs3AAVmEEeysRbzOFE1yaw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gs2Y8FmEEeysRbzOFE1yaw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gs2Y8VmEEeysRbzOFE1yaw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_gs3AAFmEEeysRbzOFE1yaw" name="se connecte" type="_zlcsEFmDEeysRbzOFE1yaw" association="_gsmhUFmEEeysRbzOFE1yaw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_gs3AAVmEEeysRbzOFE1yaw" name="adminfinance" type="_k8BE4FmAEeysRbzOFE1yaw" association="_gsmhUFmEEeysRbzOFE1yaw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7iBEcFsMEeyFOoE3CQutKA" memberEnd="_7j4ssFsMEeyFOoE3CQutKA _7j5TwFsMEeyFOoE3CQutKA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7juUoFsMEeyFOoE3CQutKA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7juUoVsMEeyFOoE3CQutKA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7j4ssFsMEeyFOoE3CQutKA" name="confirme une vente" type="_szAH4FmDEeysRbzOFE1yaw" association="_7iBEcFsMEeyFOoE3CQutKA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7j5TwFsMEeyFOoE3CQutKA" name="vendeur" type="_9ngRwFmBEeysRbzOFE1yaw" association="_7iBEcFsMEeyFOoE3CQutKA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-AMXEFsMEeyFOoE3CQutKA" memberEnd="_-AMXE1sMEeyFOoE3CQutKA _-AM-IFsMEeyFOoE3CQutKA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-AMXEVsMEeyFOoE3CQutKA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-AMXElsMEeyFOoE3CQutKA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-AMXE1sMEeyFOoE3CQutKA" name="se connecter" type="_pKiW8FmEEeysRbzOFE1yaw" association="_-AMXEFsMEeyFOoE3CQutKA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-AM-IFsMEeyFOoE3CQutKA" name="vendeur" type="_9ngRwFmBEeysRbzOFE1yaw" association="_-AMXEFsMEeyFOoE3CQutKA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_UeRw4FsREeyFOoE3CQutKA" memberEnd="_UeSX8FsREeyFOoE3CQutKA _UeSX8VsREeyFOoE3CQutKA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UeRw4VsREeyFOoE3CQutKA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UeRw4lsREeyFOoE3CQutKA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_UeSX8FsREeyFOoE3CQutKA" name="adminfinance" type="_k8BE4FmAEeysRbzOFE1yaw" association="_UeRw4FsREeyFOoE3CQutKA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_UeSX8VsREeyFOoE3CQutKA" name="afficher suivie vente" type="_N5tDAFmEEeysRbzOFE1yaw" association="_UeRw4FsREeyFOoE3CQutKA"/>
+  </packagedElement>
+</uml:Model>

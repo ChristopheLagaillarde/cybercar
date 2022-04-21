@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Dh4QYFmAEeysRbzOFE1yaw" type="UseCase" name="Use Case Diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_I8jwYFmAEeysRbzOFE1yaw" type="Package_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_I8jwYlmAEeysRbzOFE1yaw" type="Package_NameLabel"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_I8kXcFmAEeysRbzOFE1yaw" type="Package_PackagedElementCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_k8EvQFmAEeysRbzOFE1yaw" type="Actor_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k8FWUFmAEeysRbzOFE1yaw" type="Actor_NameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_k8FWUVmAEeysRbzOFE1yaw" y="15"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_k8FWUlmAEeysRbzOFE1yaw" type="Actor_StereotypeLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_k8FWU1mAEeysRbzOFE1yaw" x="20" y="100"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_k8FWVFmAEeysRbzOFE1yaw" type="Actor_QualifiedNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_k8FWVVmAEeysRbzOFE1yaw" x="20" y="80"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_k8FWVlmAEeysRbzOFE1yaw" type="Actor_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_k8FWV1mAEeysRbzOFE1yaw" y="15"/>
+        </children>
+        <element xmi:type="uml:Actor" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_k8BE4FmAEeysRbzOFE1yaw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k8EvQVmAEeysRbzOFE1yaw" x="14" y="652" width="81" height="141"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_9no0oFmBEeysRbzOFE1yaw" type="Actor_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_9npbsFmBEeysRbzOFE1yaw" type="Actor_NameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_9npbsVmBEeysRbzOFE1yaw" y="15"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9npbslmBEeysRbzOFE1yaw" type="Actor_StereotypeLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_9npbs1mBEeysRbzOFE1yaw" x="20" y="100"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9npbtFmBEeysRbzOFE1yaw" type="Actor_QualifiedNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_9npbtVmBEeysRbzOFE1yaw" x="20" y="80"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9npbtlmBEeysRbzOFE1yaw" type="Actor_FloatingNameLabel_CN">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_9npbt1mBEeysRbzOFE1yaw" y="15"/>
+        </children>
+        <element xmi:type="uml:Actor" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_9ngRwFmBEeysRbzOFE1yaw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9no0oVmBEeysRbzOFE1yaw" x="14" y="52" width="81" height="161"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_TXk2YFmDEeysRbzOFE1yaw" type="Package_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_TXk2YlmDEeysRbzOFE1yaw" type="Package_NameLabel_CN"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_TXk2Y1mDEeysRbzOFE1yaw" type="Package_PackagedElementCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_bDgnUFmDEeysRbzOFE1yaw" type="Component_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_bDhOYFmDEeysRbzOFE1yaw" type="Component_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_bDhOYVmDEeysRbzOFE1yaw" type="Component_FloatingNameLabel">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_bDhOYlmDEeysRbzOFE1yaw" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_bDhOY1mDEeysRbzOFE1yaw" type="Component_PackagedElementCompartment_CN">
+              <children xmi:type="notation:Shape" xmi:id="_N54CIFmEEeysRbzOFE1yaw" type="UseCase_Shape_CCN">
+                <children xmi:type="notation:DecorationNode" xmi:id="_N6BzIFmEEeysRbzOFE1yaw" type="UseCase_NameLabel_CCN"/>
+                <children xmi:type="notation:DecorationNode" xmi:id="_N6BzIVmEEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CCN">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_N6BzIlmEEeysRbzOFE1yaw" y="15"/>
+                </children>
+                <children xmi:type="notation:BasicCompartment" xmi:id="_N6BzI1mEEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CCN">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_N6CaMFmEEeysRbzOFE1yaw"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_N6CaMVmEEeysRbzOFE1yaw"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N6CaMlmEEeysRbzOFE1yaw"/>
+                </children>
+                <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_N5tDAFmEEeysRbzOFE1yaw"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N54CIVmEEeysRbzOFE1yaw" x="54" y="114" width="141" height="61"/>
+              </children>
+              <children xmi:type="notation:Shape" xmi:id="_UMNi4FmEEeysRbzOFE1yaw" type="UseCase_Shape_CCN">
+                <children xmi:type="notation:DecorationNode" xmi:id="_UMOJ8FmEEeysRbzOFE1yaw" type="UseCase_NameLabel_CCN"/>
+                <children xmi:type="notation:DecorationNode" xmi:id="_UMOJ8VmEEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CCN">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_UMOJ8lmEEeysRbzOFE1yaw" y="15"/>
+                </children>
+                <children xmi:type="notation:BasicCompartment" xmi:id="_UMOJ81mEEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CCN">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_UMOJ9FmEEeysRbzOFE1yaw"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_UMOJ9VmEEeysRbzOFE1yaw"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UMOJ9lmEEeysRbzOFE1yaw"/>
+                </children>
+                <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_UL-5YFmEEeysRbzOFE1yaw"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UMNi4VmEEeysRbzOFE1yaw" x="34" y="34" width="165" height="61"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bDhOZFmDEeysRbzOFE1yaw"/>
+            </children>
+            <element xmi:type="uml:Component" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_bDagsFmDEeysRbzOFE1yaw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bDgnUVmDEeysRbzOFE1yaw" x="554" y="12" width="221" height="221"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_zlkA0FmDEeysRbzOFE1yaw" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_zlkA0lmDEeysRbzOFE1yaw" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_zlkA01mDEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zlkA1FmDEeysRbzOFE1yaw" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_zlkA1VmDEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_zlkA1lmDEeysRbzOFE1yaw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_zlkA11mDEeysRbzOFE1yaw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zlkA2FmDEeysRbzOFE1yaw"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_zlcsEFmDEeysRbzOFE1yaw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zlkA0VmDEeysRbzOFE1yaw" x="14" y="232" width="141" height="101"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_3JsO4FmDEeysRbzOFE1yaw" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_3JsO4lmDEeysRbzOFE1yaw" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_3JsO41mDEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_3JsO5FmDEeysRbzOFE1yaw" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_3Js18FmDEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_3Js18VmDEeysRbzOFE1yaw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_3Js18lmDEeysRbzOFE1yaw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Js181mDEeysRbzOFE1yaw"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_3JkTEFmDEeysRbzOFE1yaw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3JsO4VmDEeysRbzOFE1yaw" x="214" y="272" width="241" height="61"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_CbvK4FmEEeysRbzOFE1yaw" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_CcKBoFmEEeysRbzOFE1yaw" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_CcKBoVmEEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_CcKBolmEEeysRbzOFE1yaw" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_CcKBo1mEEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_CcKBpFmEEeysRbzOFE1yaw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_CcKBpVmEEeysRbzOFE1yaw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CcKBplmEEeysRbzOFE1yaw"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_CbmA8FmEEeysRbzOFE1yaw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CbvK4VmEEeysRbzOFE1yaw" x="314" y="195" width="201" height="61"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_xo67kFsQEeyFOoE3CQutKA" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_xo7ioFsQEeyFOoE3CQutKA" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_xo7ioVsQEeyFOoE3CQutKA" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xo7iolsQEeyFOoE3CQutKA" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_xo7io1sQEeyFOoE3CQutKA" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_xo7ipFsQEeyFOoE3CQutKA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_xo7ipVsQEeyFOoE3CQutKA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xo7iplsQEeyFOoE3CQutKA"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_xouHQFsQEeyFOoE3CQutKA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xo67kVsQEeyFOoE3CQutKA" x="54" y="12" width="265" height="61"/>
+          </children>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TXk2ZFmDEeysRbzOFE1yaw"/>
+        </children>
+        <element xmi:type="uml:Package" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_TXNC8FmDEeysRbzOFE1yaw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TXk2YVmDEeysRbzOFE1yaw" x="134" y="472" width="941" height="361"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_j28y4FmDEeysRbzOFE1yaw" type="Package_Shape_CN">
+        <children xmi:type="notation:DecorationNode" xmi:id="_j29Z8FmDEeysRbzOFE1yaw" type="Package_NameLabel_CN"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_j29Z8VmDEeysRbzOFE1yaw" type="Package_PackagedElementCompartment_CN">
+          <children xmi:type="notation:Shape" xmi:id="_szHcoFmDEeysRbzOFE1yaw" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_szHcolmDEeysRbzOFE1yaw" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_szHco1mDEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_szHcpFmDEeysRbzOFE1yaw" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_szHcpVmDEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_szHcplmDEeysRbzOFE1yaw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_szHcp1mDEeysRbzOFE1yaw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_szHcqFmDEeysRbzOFE1yaw"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_szAH4FmDEeysRbzOFE1yaw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_szHcoVmDEeysRbzOFE1yaw" x="711" y="12" width="161" height="81"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_pKvLQFmEEeysRbzOFE1yaw" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_pKvyUFmEEeysRbzOFE1yaw" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_pKvyUVmEEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_pKvyUlmEEeysRbzOFE1yaw" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_pKvyU1mEEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_pKvyVFmEEeysRbzOFE1yaw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_pKvyVVmEEeysRbzOFE1yaw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pKvyVlmEEeysRbzOFE1yaw"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_pKiW8FmEEeysRbzOFE1yaw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pKvLQVmEEeysRbzOFE1yaw" x="11" y="152" width="101" height="101"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_zdl7IFmEEeysRbzOFE1yaw" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_zdl7IlmEEeysRbzOFE1yaw" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_zdl7I1mEEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zdl7JFmEEeysRbzOFE1yaw" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_zdl7JVmEEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_zdl7JlmEEeysRbzOFE1yaw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_zdl7J1mEEeysRbzOFE1yaw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zdl7KFmEEeysRbzOFE1yaw"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_zdYfwFmEEeysRbzOFE1yaw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zdl7IVmEEeysRbzOFE1yaw" x="131" y="132" width="201" height="41"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_N2gvoFmFEeysRbzOFE1yaw" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_N2gvolmFEeysRbzOFE1yaw" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_N2gvo1mFEeysRbzOFE1yaw" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_N2gvpFmFEeysRbzOFE1yaw" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_N2gvpVmFEeysRbzOFE1yaw" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_N2gvplmFEeysRbzOFE1yaw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_N2gvp1mFEeysRbzOFE1yaw"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N2gvqFmFEeysRbzOFE1yaw"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_N2Q4AFmFEeysRbzOFE1yaw"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N2gvoVmFEeysRbzOFE1yaw" x="131" y="212" width="181" height="61"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_Q_AqIFsQEeyFOoE3CQutKA" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_Q_BRMFsQEeyFOoE3CQutKA" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_Q_BRMVsQEeyFOoE3CQutKA" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Q_BRMlsQEeyFOoE3CQutKA" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_Q_BRM1sQEeyFOoE3CQutKA" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_Q_BRNFsQEeyFOoE3CQutKA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_Q_BRNVsQEeyFOoE3CQutKA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q_BRNlsQEeyFOoE3CQutKA"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_Q-cCYFsQEeyFOoE3CQutKA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q_AqIVsQEeyFOoE3CQutKA" x="491" y="92" width="121" height="81"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_ZgdGwFsQEeyFOoE3CQutKA" type="UseCase_Shape_CN">
+            <children xmi:type="notation:DecorationNode" xmi:id="_ZgdGwlsQEeyFOoE3CQutKA" type="UseCase_NameLabel_CN"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_ZgdGw1sQEeyFOoE3CQutKA" type="UseCase_FloatingNameLabel_CN">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ZgdGxFsQEeyFOoE3CQutKA" y="15"/>
+            </children>
+            <children xmi:type="notation:BasicCompartment" xmi:id="_ZgdGxVsQEeyFOoE3CQutKA" type="UseCase_ExtensionPointCompartment_CN">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_ZgdGxlsQEeyFOoE3CQutKA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_ZgdGx1sQEeyFOoE3CQutKA"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZgdGyFsQEeyFOoE3CQutKA"/>
+            </children>
+            <element xmi:type="uml:UseCase" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_ZgQScFsQEeyFOoE3CQutKA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZgdGwVsQEeyFOoE3CQutKA" x="111" y="312" width="241" height="61"/>
+          </children>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j29Z8lmDEeysRbzOFE1yaw"/>
+        </children>
+        <element xmi:type="uml:Package" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_j21eIFmDEeysRbzOFE1yaw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j28y4VmDEeysRbzOFE1yaw" x="137" y="32" width="938" height="441"/>
+      </children>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8kXcVmAEeysRbzOFE1yaw"/>
+    </children>
+    <element xmi:type="uml:Package" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_I8h7MFmAEeysRbzOFE1yaw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8jwYVmAEeysRbzOFE1yaw" x="80" y="-20" width="1481" height="861"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_Dh4QYVmAEeysRbzOFE1yaw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Dh4QYlmAEeysRbzOFE1yaw"/>
+  <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_Dh4QY1mAEeysRbzOFE1yaw" diagramKindId="org.eclipse.papyrus.uml.diagram.useCase">
+    <owner xmi:type="uml:Model" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_DhAGoFmAEeysRbzOFE1yaw"/>
+  </styles>
+  <element xmi:type="uml:Model" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_DhAGoFmAEeysRbzOFE1yaw"/>
+  <edges xmi:type="notation:Connector" xmi:id="__iuWYFmDEeysRbzOFE1yaw" type="Extend_Edge" source="_3JsO4FmDEeysRbzOFE1yaw" target="_zlkA0FmDEeysRbzOFE1yaw">
+    <children xmi:type="notation:DecorationNode" xmi:id="__i6joFmDEeysRbzOFE1yaw" type="Extend_KeywordLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_sleekFsKEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__i6joVmDEeysRbzOFE1yaw" x="1" y="18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="__i6jolmDEeysRbzOFE1yaw" type="Extend_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_sl4uQFsKEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__i6jo1mDEeysRbzOFE1yaw" x="-1" y="-19"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="__iuWYVmDEeysRbzOFE1yaw"/>
+    <element xmi:type="uml:Extend" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#__hBtQFmDEeysRbzOFE1yaw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__iuWYlmDEeysRbzOFE1yaw" points="[500, 687, -643984, -643984]$[399, 660, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__kOLMFmDEeysRbzOFE1yaw" id="(0.16597510373443983,0.11475409836065574)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__kOLMVmDEeysRbzOFE1yaw" id="(0.9858156028368794,0.39603960396039606)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_MBpVMFmEEeysRbzOFE1yaw" type="Extend_Edge" source="_CbvK4FmEEeysRbzOFE1yaw" target="_zlkA0FmDEeysRbzOFE1yaw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MBp8QFmEEeysRbzOFE1yaw" type="Extend_KeywordLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_qk-mcFsKEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_MBp8QVmEEeysRbzOFE1yaw" x="1" y="17"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_MBp8QlmEEeysRbzOFE1yaw" type="Extend_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_qlQ6UFsKEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_MBp8Q1mEEeysRbzOFE1yaw" y="-18"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_MBpVMVmEEeysRbzOFE1yaw"/>
+    <element xmi:type="uml:Extend" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_MBeWEFmEEeysRbzOFE1yaw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MBpVMlmEEeysRbzOFE1yaw" points="[380, 500, -643984, -643984]$[320, 620, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MCIdYFmEEeysRbzOFE1yaw" id="(0.39800995024875624,0.9836065573770492)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MCIdYVmEEeysRbzOFE1yaw" id="(0.425531914893617,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_gs4OIFmEEeysRbzOFE1yaw" type="Association_Edge" source="_k8EvQFmAEeysRbzOFE1yaw" target="_zlkA0FmDEeysRbzOFE1yaw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_gs4OI1mEEeysRbzOFE1yaw" type="Association_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_GUAuwFsKEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_gs4OJFmEEeysRbzOFE1yaw" x="-1" y="39"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_gs4OJVmEEeysRbzOFE1yaw" type="Association_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_GUhFEFsKEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_gs4OJlmEEeysRbzOFE1yaw" x="1" y="-20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_gs4OIVmEEeysRbzOFE1yaw"/>
+    <element xmi:type="uml:Association" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_gsmhUFmEEeysRbzOFE1yaw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gs4OIlmEEeysRbzOFE1yaw" points="[201, 460, -643984, -643984]$[281, 460, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gtYkcFmEEeysRbzOFE1yaw" id="(1.0,0.425531914893617)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gtYkcVmEEeysRbzOFE1yaw" id="(0.0070921985815602835,0.39603960396039606)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_7kbfQFsMEeyFOoE3CQutKA" type="Association_Edge" source="_9no0oFmBEeysRbzOFE1yaw" target="_szHcoFmDEeysRbzOFE1yaw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_7kmeYFsMEeyFOoE3CQutKA" type="Association_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_PBfNgFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_7kmeYVsMEeyFOoE3CQutKA" x="1" y="38"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_7kmeYlsMEeyFOoE3CQutKA" type="Association_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_PBwTQFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_7kmeY1sMEeyFOoE3CQutKA" x="1" y="-18"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_7kbfQVsMEeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Association" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_7iBEcFsMEeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7kbfQlsMEeyFOoE3CQutKA" points="[181, 140, -643984, -643984]$[940, 141, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7qhgMFsMEeyFOoE3CQutKA" id="(1.0,0.4968944099378882)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7qhgMVsMEeyFOoE3CQutKA" id="(0.0,0.5061728395061729)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_-AUS4FsMEeyFOoE3CQutKA" type="Association_Edge" source="_9no0oFmBEeysRbzOFE1yaw" target="_pKvLQFmEEeysRbzOFE1yaw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_-AUS41sMEeyFOoE3CQutKA" type="Association_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_Ufkm0FsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_-AUS5FsMEeyFOoE3CQutKA" y="39"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_-AU58FsMEeyFOoE3CQutKA" type="Association_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_UfxbIFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_-AU58VsMEeyFOoE3CQutKA" x="1" y="-18"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_-AUS4VsMEeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Association" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_-AMXEFsMEeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-AUS4lsMEeyFOoE3CQutKA" points="[181, 140, -643984, -643984]$[481, 320, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-Ck8sFsMEeyFOoE3CQutKA" id="(1.0,0.4968944099378882)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-Ck8sVsMEeyFOoE3CQutKA" id="(0.009900990099009901,0.39603960396039606)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_DltOEFsNEeyFOoE3CQutKA" type="Extend_Edge" source="_zdl7IFmEEeysRbzOFE1yaw" target="_pKvLQFmEEeysRbzOFE1yaw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DltOE1sNEeyFOoE3CQutKA" type="Extend_KeywordLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_URo4gFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DltOFFsNEeyFOoE3CQutKA" x="-1" y="18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_DltOFVsNEeyFOoE3CQutKA" type="Extend_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_UR3iAFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DltOFlsNEeyFOoE3CQutKA" y="-19"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_DltOEVsNEeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Extend" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_DjwGQFsNEeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DltOElsNEeyFOoE3CQutKA" points="[760, 228, -643984, -643984]$[570, 300, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DmTD8FsNEeyFOoE3CQutKA" id="(0.09950248756218906,0.1951219512195122)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DmTD8VsNEeyFOoE3CQutKA" id="(0.8910891089108911,0.19801980198019803)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_NHmbEFsNEeyFOoE3CQutKA" type="Include_Edge" source="_szHcoFmDEeysRbzOFE1yaw" target="_UMNi4FmEEeysRbzOFE1yaw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_NHnCIFsNEeyFOoE3CQutKA" type="Include_KeywordLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_PA5-sFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_NHnCIVsNEeyFOoE3CQutKA" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_NHnCIlsNEeyFOoE3CQutKA" type="Include_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_PBM5oFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_NHnCI1sNEeyFOoE3CQutKA" y="-20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_NHmbEVsNEeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Include" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_NHXxkFsNEeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NHmbElsNEeyFOoE3CQutKA" points="[1000, 159, -643984, -643984]$[920, 600, -643984, -643984]$[900, 660, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NIWB8FsNEeyFOoE3CQutKA" id="(0.37267080745341613,0.9753086419753086)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NIWB8VsNEeyFOoE3CQutKA" id="(0.48484848484848486,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_XKYAMFsQEeyFOoE3CQutKA" type="Include_Edge" source="_szHcoFmDEeysRbzOFE1yaw" target="_Q_AqIFsQEeyFOoE3CQutKA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XKYnQFsQEeyFOoE3CQutKA" type="Include_KeywordLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_kHTwsFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XKYnQVsQEeyFOoE3CQutKA" x="1" y="17"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_XKYnQlsQEeyFOoE3CQutKA" type="Include_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_kHf98FsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XKYnQ1sQEeyFOoE3CQutKA" y="-18"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_XKYAMVsQEeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Include" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_XKIvoFsQEeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XKYAMlsQEeyFOoE3CQutKA" points="[960, 147, -643984, -643984]$[860, 209, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XLMfkFsQEeyFOoE3CQutKA" id="(0.12422360248447205,0.8271604938271605)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XLMfkVsQEeyFOoE3CQutKA" id="(0.8264462809917356,0.1111111111111111)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_g7n30FsQEeyFOoE3CQutKA" type="Include_Edge" source="_szHcoFmDEeysRbzOFE1yaw" target="_ZgdGwFsQEeyFOoE3CQutKA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_g7n301sQEeyFOoE3CQutKA" type="Include_KeywordLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_ikvKsFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g7n31FsQEeyFOoE3CQutKA" x="1" y="18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_g7n31VsQEeyFOoE3CQutKA" type="Include_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_ik7_AFsQEeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g7n31lsQEeyFOoE3CQutKA" y="-19"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g7n30VsQEeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Include" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_g7Z1YFsQEeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g7n30lsQEeyFOoE3CQutKA" points="[1000, 159, -643984, -643984]$[800, 363, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g8MfkFsQEeyFOoE3CQutKA" id="(0.37267080745341613,0.9753086419753086)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g8MfkVsQEeyFOoE3CQutKA" id="(0.7468879668049793,0.04918032786885246)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_woO6oFsQEeyFOoE3CQutKA" type="Include_Edge" source="_pKvLQFmEEeysRbzOFE1yaw" target="_ZgdGwFsQEeyFOoE3CQutKA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_woO6o1sQEeyFOoE3CQutKA" type="Include_KeywordLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_woO6pFsQEeyFOoE3CQutKA" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_woO6pVsQEeyFOoE3CQutKA" type="Include_StereotypeLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_woO6plsQEeyFOoE3CQutKA" y="-20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_woO6oVsQEeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Include" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_woARIFsQEeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_woO6olsQEeyFOoE3CQutKA" points="[260, 310, -643984, -643984]$[380, 387, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_woxGIFsQEeyFOoE3CQutKA" id="(0.19801980198019803,0.8910891089108911)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_woxGIVsQEeyFOoE3CQutKA" id="(0.16597510373443983,0.11475409836065574)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_HDEI8FsREeyFOoE3CQutKA" type="Include_Edge" source="_zlkA0FmDEeysRbzOFE1yaw" target="_xo67kFsQEeyFOoE3CQutKA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_HDEI81sREeyFOoE3CQutKA" type="Include_KeywordLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_L5noMFsREeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HDEI9FsREeyFOoE3CQutKA" y="19"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_HDEI9VsREeyFOoE3CQutKA" type="Include_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_L51qoFsREeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HDEI9lsREeyFOoE3CQutKA" x="-1" y="-18"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_HDEI8VsREeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Include" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_HC2tkFsREeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HDEI8lsREeyFOoE3CQutKA" points="[260, 695, -643984, -643984]$[380, 574, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HDp-0FsREeyFOoE3CQutKA" id="(0.14184397163120568,0.1485148514851485)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HDp-0VsREeyFOoE3CQutKA" id="(0.19622641509433963,0.8852459016393442)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_UeS_AFsREeyFOoE3CQutKA" type="Association_Edge" source="_N54CIFmEEeysRbzOFE1yaw" target="_k8EvQFmAEeysRbzOFE1yaw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_UeS_A1sREeyFOoE3CQutKA" type="Association_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_WsYnMFsREeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_UeS_BFsREeyFOoE3CQutKA" x="-1" y="38"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_UeS_BVsREeyFOoE3CQutKA" type="Association_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_Wsk0cFsREeyFOoE3CQutKA" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_UeS_BlsREeyFOoE3CQutKA" y="-19"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_UeS_AVsREeyFOoE3CQutKA"/>
+    <element xmi:type="uml:Association" href="UseCaseDiagramModuleAdminFinanceSFSuivieVente.uml#_UeRw4FsREeyFOoE3CQutKA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UeS_AlsREeyFOoE3CQutKA" points="[953, 680, -643984, -643984]$[181, 720, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UeyuQFsREeyFOoE3CQutKA" id="(0.06382978723404255,0.2459016393442623)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UezVUFsREeyFOoE3CQutKA" id="(1.0,0.425531914893617)"/>
+  </edges>
+</notation:Diagram>
