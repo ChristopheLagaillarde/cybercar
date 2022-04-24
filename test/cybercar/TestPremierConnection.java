@@ -16,7 +16,7 @@ class TestPremierConnection {
 			testLoginPremierConnection.barreMotDePasse.setText("77777777");
 
 
-			if(testLoginPremierConnection.PremierConnectionAuCompte()) {
+			if(testLoginPremierConnection.premierConnectionAuCompte()) {
 				assertTrue(true);
 			}
 			else {

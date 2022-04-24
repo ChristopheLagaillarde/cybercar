@@ -146,7 +146,7 @@ public class FenetreLogin extends JFrame {
 	 *  Dit si il s'agit de la première connection de l'employé
 	 * @return la valeur booléeene (première connection ou pas)
 	 */
-	Boolean PremierConnectionAuCompte() {
+	Boolean premierConnectionAuCompte() {
 		ConnectionFactory connectionBDPourVerifierSiPremierConnection = null;
 		ResultSet resultatSelectPremierConnection  = null;
 		String donnePriveEtSensible = "";
@@ -166,10 +166,7 @@ public class FenetreLogin extends JFrame {
 		} catch (SQLException requeteNonValde) {
 			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable");
 		} 
-		if(donnePriveEtSensible.equals(" A remplirA remplirA remplirA remplir")) {
-			return true;
-		}
-		return false;
+		return donnePriveEtSensible.equals(" A remplirA remplirA remplirA remplir"); 
 	}
 
 	/**
@@ -251,7 +248,7 @@ public class FenetreLogin extends JFrame {
 			try {
 				fonctionDansLentreprise = fonctionDeLEmployeDansLEntreprise(Hash.hashage(barreMotDePasse.getText(),"SHA3-256"));
 
-				if(PremierConnectionAuCompte()) {
+				if(Boolean.TRUE.equals((premierConnectionAuCompte()))) {
 					FenetreDonnePriveEtSensible.main(null);
 					FenetreLogin.this.dispose();
 					sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
