@@ -347,3 +347,7 @@ Connection réussite : true
 Date : 2022/04/24 18:21:46
 Login utilisé : garagiste@cybercar.com
 Connection réussite : true
+
+Date : 2022/04/24 18:27:27
+Login utilisé : vendeur@cybercar.com
+Connection réussite : false

@@ -83,6 +83,10 @@ public class FenetreLogin extends JFrame {
 		}
 	}
 
+	/**
+	 * Renvoie vers le bon département
+	 * @param fonctionDansLentreprise
+	 */
 	void accedeASonDepartement(String fonctionDansLentreprise) {
 		if(fonctionDansLentreprise.equals("vendeur")) {
 			FenetreVendeur.main(null);
@@ -111,6 +115,11 @@ public class FenetreLogin extends JFrame {
 		FenetreLogin.this.dispose();
 	}
 
+	/**
+	 * cherche la fonction de l'employé dans la base de donnée
+	 * @param motDePasseHashe
+	 * @return fonctionDansLEntreprise la fonction dans l'entreprise
+	 */
 	String fonctionDeLEmployeDansLEntreprise(String motDePasseHashe) {
 		String fonctionDansLEntreprise = null;
 		ConnectionFactory connectionBDPourVerifierFonction = null;
@@ -133,6 +142,10 @@ public class FenetreLogin extends JFrame {
 		return fonctionDansLEntreprise;
 	}
 
+	/**
+	 *  Dit si il s'agit de la première connection de l'employé
+	 * @return la valeur booléeene (première connection ou pas)
+	 */
 	Boolean PremierConnectionAuCompte() {
 		ConnectionFactory connectionBDPourVerifierSiPremierConnection = null;
 		ResultSet resultatSelectPremierConnection  = null;
