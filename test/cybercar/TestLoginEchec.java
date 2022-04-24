@@ -17,26 +17,36 @@ class TestLoginEchec {
 			String motDePasseHashe = null;
 			ResultSet resultatSelectFonctionEmploye = null;
 
-			@SuppressWarnings("unused")
-			String fonctionDansLentreprise = null;
+			String fonctionDansLentreprise = "";
 
 
 			connectionBDPourLogin = new ConnectionFactory("Cybercar","root","");
 			testMauvaisLogin = new FenetreLogin();
 
 			testMauvaisLogin.barreLogin.setText("mauvaisLogin@cybercar.com");
-			motDePasseHashe = Hash.hashage(testMauvaisLogin.barreMotDepasse.getText(),"SHA3-256");
+			testMauvaisLogin.barreMotDePasse.setText("mauvaisMDP");
+
+			
+
+			motDePasseHashe = Hash.hashage(testMauvaisLogin.barreMotDePasse.getText(),"SHA3-256");
 
 			resultatSelectFonctionEmploye = connectionBDPourLogin.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectLaFonctionDeLutilisateur(testMauvaisLogin.barreLogin.getText(),motDePasseHashe));
 			while(resultatSelectFonctionEmploye.next()) {
 				fonctionDansLentreprise = resultatSelectFonctionEmploye.getString("fonction");
 			}
 			resultatSelectFonctionEmploye.close();
+			
+			if(fonctionDansLentreprise.isEmpty()) {
+				assertTrue(true);
+			}
+			else {
+				fail("La requete a réussi");
+			}
 
 		}catch(SQLException EchecRequeteSQL) {
 			fail("La requete est pas bonne");
 		}catch(Exception mauvaisMotDepasseOuLogin) {
-	         assertTrue(true);
+			fail("La requete est pas bonne");
 		}
 	}
 

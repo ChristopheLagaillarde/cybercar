@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.awt.Font;
@@ -81,33 +82,81 @@ public class FenetreLogin extends JFrame {
 			}
 		}
 	}
-	
+
 	void accedeASonDepartement(String fonctionDansLentreprise) {
 		if(fonctionDansLentreprise.equals("vendeur")) {
 			FenetreVendeur.main(null);
 		}
-		
+
 		if(fonctionDansLentreprise.equals("adminSystem")) {
 			FenetreAdminSystem.main(null);
 		}
-		
+
 		if(fonctionDansLentreprise.equals("employeRH")) {
 			FenetreRH.main(null);
 		}
-		
+
 		if(fonctionDansLentreprise.equals("garagiste")) {
 			FenetreGaragiste.main(null);
 		}
-		
+
 		if(fonctionDansLentreprise.equals("employeFinance")) {
 			FenetreFinance.main(null);
 		}
-		
+
 		if(fonctionDansLentreprise.equals("employeSI")) {
 			FenetreSI.main(null);
 		}
 		sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
 		FenetreLogin.this.dispose();
+	}
+
+	String fonctionDeLEmployeDansLEntreprise(String motDePasseHashe) {
+		String fonctionDansLEntreprise = null;
+		ConnectionFactory connectionBDPourVerifierFonction = null;
+		ResultSet resultatSelectFonctionEmploye = null;
+
+		connectionBDPourVerifierFonction = new ConnectionFactory("CyberCar","root","");
+
+		try {
+			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectLaFonctionDeLutilisateur(barreLogin.getText(),motDePasseHashe));
+			
+			while(resultatSelectFonctionEmploye.next()) {
+				fonctionDansLEntreprise = resultatSelectFonctionEmploye.getString("fonction");
+			}
+			resultatSelectFonctionEmploye.close();
+
+		} catch (SQLException requeteNonValide) {
+			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable");
+		}
+
+		return fonctionDansLEntreprise;
+	}
+
+	Boolean PremierConnectionAuCompte() {
+		ConnectionFactory connectionBDPourVerifierSiPremierConnection = null;
+		ResultSet resultatSelectPremierConnection  = null;
+		String donnePriveEtSensible = "";
+		
+		barreLogin.getText();
+
+		try {
+			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("CyberCar","root","");
+			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectDonnePersoEtPriveUtilisateur(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
+			
+			while(resultatSelectPremierConnection.next()) {
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("nomDeJeuneFille"));
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("situationConjugale"));
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
+			}
+		} catch (SQLException requeteNonValde) {
+			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable");
+		} 
+		if(donnePriveEtSensible.equals(" A remplirA remplirA remplirA remplir")) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -116,7 +165,7 @@ public class FenetreLogin extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel panelPrincipal;
 	JTextField barreLogin;
-	JTextField barreMotDepasse;
+	JTextField barreMotDePasse;
 
 	/**
 	 * Le main de FenetreLogin 
@@ -161,7 +210,7 @@ public class FenetreLogin extends JFrame {
 		motDePasseText = new JLabel("mot de passe");
 		barreLogin = new JTextField();
 		boutonSeConnecter = new JButton("Se Connecter");
-		barreMotDepasse = new JPasswordField();
+		barreMotDePasse = new JPasswordField();
 
 		loginText.setFont(new Font(font, Font.BOLD, 13));
 		motDePasseText.setFont(new Font(font, Font.BOLD, 13));
@@ -171,56 +220,25 @@ public class FenetreLogin extends JFrame {
 		loginText.setBounds(44, 22, 56, 20);
 		motDePasseText.setBounds(10, 64, 87, 20);
 		barreLogin.setBounds(105, 21, 146, 26);
-		barreMotDepasse.setBounds(105, 58, 146, 26);
+		barreMotDePasse.setBounds(105, 58, 146, 26);
 		boutonSeConnecter.setBounds(105, 95, 146, 37);
 
 		barreLogin.setColumns(10);
-		barreMotDepasse.setColumns(10);
+		barreMotDePasse.setColumns(10);
 
 		panelPrincipal.add(loginText);
 		panelPrincipal.add(motDePasseText);
 		panelPrincipal.add(barreLogin);
-		panelPrincipal.add(barreMotDepasse);
+		panelPrincipal.add(barreMotDePasse);
 		panelPrincipal.add(boutonSeConnecter);
 
 		boutonSeConnecter.addActionListener(e -> {
 			String fonctionDansLentreprise = null;
-			String donnePriveEtSensible = "";
-			String motDePasseHashe = null;
-
-			ConnectionFactory connectionBDPourLogin = null;
-			ConnectionFactory connectionBDPourVerifierSiPremierConnection = null;
-
-			ResultSet resultatSelectFonctionEmploye = null;
-			ResultSet resultatSelectPremierConnection  = null;
-
-
-			connectionBDPourLogin = new ConnectionFactory("CyberCar","root","");
 
 			try {
-				// Hashage du mot de passe
-				motDePasseHashe = Hash.hashage(barreMotDepasse.getText(),"SHA3-256");
+				fonctionDansLentreprise = fonctionDeLEmployeDansLEntreprise(Hash.hashage(barreMotDePasse.getText(),"SHA3-256"));
 
-				// Recherche de la fonction de l'employe
-				resultatSelectFonctionEmploye = connectionBDPourLogin.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectLaFonctionDeLutilisateur(barreLogin.getText(),motDePasseHashe));
-				while(resultatSelectFonctionEmploye.next()) {
-					fonctionDansLentreprise = resultatSelectFonctionEmploye.getString("fonction");
-				}
-				resultatSelectFonctionEmploye.close();
-
-				// Donne fenêtre donnée privée et sensible si c'est la 1er connection
-				connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("CyberCar","root","");
-				resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectDonnePersoEtPriveUtilisateur(barreLogin.getText()));
-
-				while(resultatSelectPremierConnection.next()) {
-					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
-					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("nomDeJeuneFille"));
-					donnePriveEtSensible =donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("situationConjugale"));
-					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
-				} 
-				
-				if(donnePriveEtSensible.equals("")) {
-					
+				if(PremierConnectionAuCompte()) {
 					FenetreDonnePriveEtSensible.main(null);
 					FenetreLogin.this.dispose();
 					sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
