@@ -27,6 +27,8 @@ import javax.swing.WindowConstants;
  */
 public class FenetreLogin extends JFrame {
 
+	String adresseFichierLog = "C://Users/Lagaillarde/eclipse-workspace-java/cybercar/src/cybercar/logLogin.txt";
+
 	/**
 	 * Fonction permettant dans sauvegarder les tentatives de connection dans un fichier log
 	 * @param addresseDuFichier
@@ -78,6 +80,34 @@ public class FenetreLogin extends JFrame {
 
 			}
 		}
+	}
+	
+	void accedeASonDepartement(String fonctionDansLentreprise) {
+		if(fonctionDansLentreprise.equals("vendeur")) {
+			FenetreVendeur.main(null);
+		}
+		
+		if(fonctionDansLentreprise.equals("AdminSystem")) {
+			FenetreAdminSystem.main(null);
+		}
+		
+		if(fonctionDansLentreprise.equals("employeRH")) {
+			FenetreRH.main(null);
+		}
+		
+		if(fonctionDansLentreprise.equals("garagiste")) {
+			FenetreGaragiste.main(null);
+		}
+		
+		if(fonctionDansLentreprise.equals("employeFinance")) {
+			FenetreFinance.main(null);
+		}
+		
+		if(fonctionDansLentreprise.equals("employeSI")) {
+			FenetreSI.main(null);
+		}
+		sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
+		FenetreLogin.this.dispose();
 	}
 
 	/**
@@ -157,7 +187,6 @@ public class FenetreLogin extends JFrame {
 			String fonctionDansLentreprise = null;
 			String donnePriveEtSensible = "";
 			String motDePasseHashe = null;
-			String adresseFichierLog = "C://Users/Lagaillarde/eclipse-workspace-java/cybercar/src/cybercar/logLogin.txt";
 
 			ConnectionFactory connectionBDPourLogin = null;
 			ConnectionFactory connectionBDPourVerifierSiPremierConnection = null;
@@ -197,32 +226,7 @@ public class FenetreLogin extends JFrame {
 				}
 
 				else if(fonctionDansLentreprise != null) {
-					if(fonctionDansLentreprise.equals("vendeur")) {
-						FenetreVendeur.main(null);
-					}
-					
-					if(fonctionDansLentreprise.equals("AdminSystem")) {
-						FenetreAdminSystem.main(null);
-					}
-					
-					if(fonctionDansLentreprise.equals("employeRH")) {
-						FenetreRH.main(null);
-					}
-					
-					if(fonctionDansLentreprise.equals("garagiste")) {
-						FenetreGaragiste.main(null);
-					}
-					
-					if(fonctionDansLentreprise.equals("employeFinance")) {
-						FenetreFinance.main(null);
-					}
-					
-					if(fonctionDansLentreprise.equals("employeSI")) {
-						FenetreSI.main(null);
-					}
-					sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
-					FenetreLogin.this.dispose();
-
+					accedeASonDepartement(fonctionDansLentreprise);
 				}
 
 				else {
