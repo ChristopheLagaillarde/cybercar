@@ -213,13 +213,13 @@ public class FenetreLogin extends JFrame {
 				resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectDonnePersoEtPriveUtilisateur(barreLogin.getText()));
 
 				while(resultatSelectPremierConnection.next()) {
-					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
-					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("nomDeJeuneFille"));
-					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("situationConjugale"));
-					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
+					donnePriveEtSensible += donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
+					donnePriveEtSensible += donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("nomDeJeuneFille"));
+					donnePriveEtSensible += donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("situationConjugale"));
+					donnePriveEtSensible += donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
 				} 
-
-				if(donnePriveEtSensible.equals("NULLNULLNULLNULL")) {
+				
+				if(donnePriveEtSensible.equals("")) {
 					
 					FenetreDonnePriveEtSensible.main(null);
 					FenetreLogin.this.dispose();

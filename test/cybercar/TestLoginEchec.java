@@ -16,10 +16,7 @@ class TestLoginEchec {
 			FenetreLogin testMauvaisLogin = null;
 			String motDePasseHashe = null;
 			ResultSet resultatSelectFonctionEmploye = null;
-			ResultSet resultatSelectPremierConnection  = null;
-			String donnePriveEtSensible = null;
 
-			ConnectionFactory connectionBDPourVerifierSiPremierConnection = null;
 			@SuppressWarnings("unused")
 			String fonctionDansLentreprise = null;
 
@@ -35,17 +32,6 @@ class TestLoginEchec {
 				fonctionDansLentreprise = resultatSelectFonctionEmploye.getString("fonction");
 			}
 			resultatSelectFonctionEmploye.close();
-
-			// Donne fenêtre donnée privée et sensible si c'est la 1er connection
-			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("CyberCar","root","");
-			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectDonnePersoEtPriveUtilisateur(testMauvaisLogin.barreLogin.getText()));
-
-			while(resultatSelectPremierConnection.next()) {
-				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
-				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("nomDeJeuneFille"));
-				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("situationConjugale"));
-				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
-			} 
 
 		}catch(SQLException EchecRequeteSQL) {
 			fail("La requete est pas bonne");
