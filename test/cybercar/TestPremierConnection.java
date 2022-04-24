@@ -15,7 +15,9 @@ class TestPremierConnection {
 			ConnectionFactory connectionBDPourLogin = null;	
 			FenetreLogin testLoginPremierConnection = null;
 			String motDePasseHashe = null;
+			@SuppressWarnings("unused")
 			ResultSet resultatSelectFonctionEmploye = null;
+			@SuppressWarnings("unused")
 			String fonctionDansLentreprise = null;
 			ConnectionFactory connectionBDPourVerifierSiPremierConnection = null;
 			ResultSet resultatSelectPremierConnection  = null;
@@ -35,10 +37,10 @@ class TestPremierConnection {
 			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectDonnePersoEtPriveUtilisateur(testLoginPremierConnection.barreLogin.getText()));
 
 			while(resultatSelectPremierConnection.next()) {
-				donnePriveEtSensible += donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
-				donnePriveEtSensible += donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("nomDeJeuneFille"));
-				donnePriveEtSensible += donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("situationConjugale"));
-				donnePriveEtSensible += donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("nomDeJeuneFille"));
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("situationConjugale"));
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
 			} 
 			
 			if(donnePriveEtSensible.equals("")) {

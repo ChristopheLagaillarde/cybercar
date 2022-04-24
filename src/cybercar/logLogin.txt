@@ -955,3 +955,11 @@ Connection réussite : true
 Date : 2022/04/24 13:11:31
 Login utilisé : vendeur@cybercar.com
 Connection réussite : true
+
+Date : 2022/04/24 13:19:27
+Login utilisé : vendeur@cybercar.com
+Connection réussite : true
+
+Date : 2022/04/24 13:19:39
+Login utilisé : nouveauEmployeFinance@cybercar.com
+Connection réussite : true
