@@ -56,7 +56,7 @@ public class FenetreAdminSystem extends JFrame {
 
 		JLabel adminSystemEcrit = new JLabel("Admin Systeme");
 		adminSystemEcrit.setFont(new Font("Tahoma", Font.PLAIN, 27));
-		adminSystemEcrit.setBounds(174, 113, 173, 86);
+		adminSystemEcrit.setBounds(101, 58, 262, 86);
 		panelPrincipal.add(adminSystemEcrit);
 	}
 

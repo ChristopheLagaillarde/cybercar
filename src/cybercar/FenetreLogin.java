@@ -87,7 +87,7 @@ public class FenetreLogin extends JFrame {
 			FenetreVendeur.main(null);
 		}
 		
-		if(fonctionDansLentreprise.equals("AdminSystem")) {
+		if(fonctionDansLentreprise.equals("adminSystem")) {
 			FenetreAdminSystem.main(null);
 		}
 		
@@ -116,7 +116,7 @@ public class FenetreLogin extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel panelPrincipal;
 	JTextField barreLogin;
-	private JTextField barreMotDepasse;
+	JTextField barreMotDepasse;
 
 	/**
 	 * Le main de FenetreLogin 
@@ -219,7 +219,8 @@ public class FenetreLogin extends JFrame {
 					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
 				} 
 
-				if(donnePriveEtSensible.equals("")) {
+				if(donnePriveEtSensible.equals("NULLNULLNULLNULL")) {
+					
 					FenetreDonnePriveEtSensible.main(null);
 					FenetreLogin.this.dispose();
 					sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
