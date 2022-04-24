@@ -190,7 +190,7 @@ public class FenetreLogin extends JFrame {
 					donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
 				} 
 
-				if(donnePriveEtSensible.equals("    ")) {
+				if(donnePriveEtSensible.equals("")) {
 					FenetreDonnePriveEtSensible.main(null);
 					FenetreLogin.this.dispose();
 					sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
@@ -198,10 +198,31 @@ public class FenetreLogin extends JFrame {
 
 				else if(fonctionDansLentreprise != null) {
 					if(fonctionDansLentreprise.equals("vendeur")) {
-						FenetreRH.main(null);
-						FenetreLogin.this.dispose();
-						sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
+						FenetreVendeur.main(null);
 					}
+					
+					if(fonctionDansLentreprise.equals("AdminSystem")) {
+						FenetreAdminSystem.main(null);
+					}
+					
+					if(fonctionDansLentreprise.equals("employeRH")) {
+						FenetreRH.main(null);
+					}
+					
+					if(fonctionDansLentreprise.equals("garagiste")) {
+						FenetreGaragiste.main(null);
+					}
+					
+					if(fonctionDansLentreprise.equals("employeFinance")) {
+						FenetreFinance.main(null);
+					}
+					
+					if(fonctionDansLentreprise.equals("employeSI")) {
+						FenetreSI.main(null);
+					}
+					sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
+					FenetreLogin.this.dispose();
+
 				}
 
 				else {
