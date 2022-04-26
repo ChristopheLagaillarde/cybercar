@@ -97,11 +97,11 @@ public class FenetreLogin extends JFrame {
 		}
 
 		if(fonctionDansLentreprise.equals("employeRH")) {
-			FenetreRH.main(null);
+			Outils.main(null);
 		}
 
 		if(fonctionDansLentreprise.equals("garagiste")) {
-			FenetreGaragiste.main(null);
+			Entrepot.main(null);
 		}
 
 		if(fonctionDansLentreprise.equals("employeFinance")) {
@@ -125,7 +125,7 @@ public class FenetreLogin extends JFrame {
 		ConnectionFactory connectionBDPourVerifierFonction = null;
 		ResultSet resultatSelectFonctionEmploye = null;
 
-		connectionBDPourVerifierFonction = new ConnectionFactory("sql11488251","sql11488251","GNqb534jQy");
+		connectionBDPourVerifierFonction = new ConnectionFactory("sql11488330","sql11488330","ry383CQtk6");
 		
 		try {
 			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectLaFonctionDeLutilisateur(barreLogin.getText(),motDePasseHashe));
@@ -154,7 +154,7 @@ public class FenetreLogin extends JFrame {
 		barreLogin.getText();
 
 		try {
-			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("sql11488251","sql11488251","GNqb534jQy");
+			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("sql11488330","sql11488330","ry383CQtk6");
 
 			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectDonnePersoEtPriveUtilisateur(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
 			

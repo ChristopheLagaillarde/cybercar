@@ -7,6 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 /**
  * Cette class permet de se connecter à une base de donnée.
  * Date : 08/11/2021
@@ -19,6 +24,11 @@ public class ConnectionFactory {
 	Connection connectionABD;
 	ResultSet resultatRequete;
 	Statement requeteAFaire;
+
+	private static String driverClassName;
+	private static String connectionUrl;
+	private static String dbUser;
+	private static String dbPassword;
 
 	// Méthodes
 	/**
@@ -37,6 +47,26 @@ public class ConnectionFactory {
 			echecDeConnection.printStackTrace();
 		}
 
+	}
+
+	private final static Properties dbProperties = new Properties();
+	static{
+		try(InputStream input = new FileInputStream("src/cybercar/dbconfig.properties")){
+			dbProperties.load(input);
+
+			driverClassName = dbProperties.getProperty("driver-class-name");
+			connectionUrl = dbProperties.getProperty("connection-url");
+			dbUser = dbProperties.getProperty("user");
+			dbPassword = dbProperties.getProperty("password");
+		}catch(IOException ioex){
+			ioex.printStackTrace(); 
+		}
+
+	}
+	public static Connection getConnection() throws SQLException {
+		Connection conn = null;
+		conn = DriverManager.getConnection(connectionUrl, dbUser, dbPassword);
+		return conn;
 	}
 }
 //////////////////Fin//////////////////////////////
