@@ -125,8 +125,8 @@ public class FenetreLogin extends JFrame {
 		ConnectionFactory connectionBDPourVerifierFonction = null;
 		ResultSet resultatSelectFonctionEmploye = null;
 
-		connectionBDPourVerifierFonction = new ConnectionFactory("CyberCar","root","");
-
+		connectionBDPourVerifierFonction = new ConnectionFactory("sql11488251","sql11488251","GNqb534jQy");
+		
 		try {
 			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectLaFonctionDeLutilisateur(barreLogin.getText(),motDePasseHashe));
 			
@@ -154,7 +154,8 @@ public class FenetreLogin extends JFrame {
 		barreLogin.getText();
 
 		try {
-			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("CyberCar","root","");
+			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("sql11488251","sql11488251","GNqb534jQy");
+
 			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectDonnePersoEtPriveUtilisateur(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
 			
 			while(resultatSelectPremierConnection.next()) {
@@ -242,7 +243,7 @@ public class FenetreLogin extends JFrame {
 		panelPrincipal.add(barreMotDePasse);
 		panelPrincipal.add(boutonSeConnecter);
 
-		boutonSeConnecter.addActionListener(e -> {
+		boutonSeConnecter.addActionListener(clickBoutton -> {
 			String fonctionDansLentreprise = null;
 
 			try {
