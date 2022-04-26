@@ -54,7 +54,7 @@ public class FenetreFinance extends JFrame {
 		setContentPane(panelPrincipal);
 		panelPrincipal.setLayout(null);
 
-		JLabel adminFinanceEcrit = new JLabel("Fiance");
+		JLabel adminFinanceEcrit = new JLabel("Finance");
 		adminFinanceEcrit.setFont(new Font("Tahoma", Font.PLAIN, 27));
 		adminFinanceEcrit.setBounds(174, 113, 173, 86);
 		panelPrincipal.add(adminFinanceEcrit);

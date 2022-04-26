@@ -28,7 +28,7 @@ import javax.swing.WindowConstants;
  */
 public class FenetreLogin extends JFrame {
 
-	String adresseFichierLog = "C://Users/Lagaillarde/eclipse-workspace-java/cybercar/src/cybercar/logLogin.txt";
+	String adresseFichierLog = "logLogin.txt";
 
 	/**
 	 * Fonction permettant dans sauvegarder les tentatives de connection dans un fichier log
