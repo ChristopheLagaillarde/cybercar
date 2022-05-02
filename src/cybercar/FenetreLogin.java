@@ -30,7 +30,7 @@ import javax.swing.WindowConstants;
 public class FenetreLogin extends JFrame {
 
 	String adresseFichierLog = "logLogin.txt";
-	String loginEtMdpBdd = "sql11488330";
+	String loginEtMdpBdd = "sql11489524";
 
 	/**
 	 * Fonction permettant dans sauvegarder les tentatives de connection dans un fichier log
@@ -122,7 +122,7 @@ public class FenetreLogin extends JFrame {
 		}
 
 		if(fonctionDansLentreprise.equals("employeRH")) {
-			Outils.main(null);
+			GestionRH.main(null);
 		}
 
 		if(fonctionDansLentreprise.equals("garagiste")) {
@@ -150,7 +150,7 @@ public class FenetreLogin extends JFrame {
 		ConnectionFactory connectionBDPourVerifierFonction = null;
 		ResultSet resultatSelectFonctionEmploye = null;
 
-		connectionBDPourVerifierFonction = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"ry383CQtk6");
+		connectionBDPourVerifierFonction = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"AKWlgpbHDy");
 		
 		try {
 			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_LA_FONCTION_DE_LUTILISATEUR(barreLogin.getText(),motDePasseHashe));
@@ -162,6 +162,8 @@ public class FenetreLogin extends JFrame {
 
 		} catch (SQLException requeteNonValide) {
 			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable");
+			requeteNonValide.printStackTrace();
+			System.out.println(requeteNonValide);
 		}
 
 		return fonctionDansLEntreprise;
@@ -179,7 +181,7 @@ public class FenetreLogin extends JFrame {
 		barreLogin.getText();
 
 		try {
-			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"ry383CQtk6");
+			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"AKWlgpbHDy");
 
 			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_DONNEE_PERSO_ET_PRIVE_UTILISATEUR(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
 			

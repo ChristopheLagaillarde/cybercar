@@ -1,66 +1,68 @@
 package cybercar;
 
-import java.util.Date;
-
 public class Employe {
 
 
-	private int    id;
+	private String id;
 	
 	private String nom;
 	private String prenom;
-	private String nom_Jeune_Fille;
 	private String adresse;
 	private String login;
-	
 	private String motDePasse;
 	private String departement;
-	private int    telephone;
-	private String mail;
-	private String sConjugale ;
+	private String civilite;
+	private String nomJeuneFille;
+	private String telephone;
 	
-	private int    nbEnfant;
-	private String aMedical;
-	private String fonction;
-	private Date   dateEmbauche;
-	private Float  salaire;
 	
-	private int    nbConges ;
-	private int    nbCongesRestants ;
-	private Date   dateFin ;
+	private String 	mail;
+	private String 	sConjugale ;
+	
+	private String  nbEnfant;
+	private String 	aMedical;
+	private String 	fonction;
+	private String  dateEmbauche;
+	private String  salaire;
+	
+	private String  nbConges ;
+	private String  nbCongesRestants ;
+	private String  dateFin ;
 	
 	public Employe() {
 	}
 	
-	public Employe(String nom, String prenom, String nomJeuneFille,String adresse, String login, String motDePasse, 
-			String departement, int    telephone, String mail,String sConjugale, int nbEnfant, String aMedical,
-			String fonction, Date dateEmbauche,Float  salaire, int nbConges, int nbCongesRestants, Date dateFin)
+	public Employe(String nom, String prenom, String adresse, String login, String motDePasse, String departement, String civilite, String nomJeuneFille,
+			 String    telephone, String mail,String sConjugale, String nbEnfant, String aMedical,
+			String fonction, String dateEmbauche, String  salaire, String nbConges, String nbCongesRestants, String dateFin)
 	{
 		
 		
 		
-		this.nom = nom;
-		this.prenom = prenom;
-		this.nom_Jeune_Fille = nomJeuneFille;
+		this.nom = nom;						//1
+		this.prenom = prenom;				//2
+		this.adresse = adresse;				//3
+		this.login = login;					//4
+		this.motDePasse=motDePasse;			//5
+		this.departement = departement;		//6
+		this.civilite= civilite;			//7
 		
-		this.adresse = adresse;
-		this.login = login;
-		this.departement = departement;
+		this.nomJeuneFille = nomJeuneFille;	//8
 		
-		this. telephone = telephone;
-		this.mail = mail;
-		this.sConjugale = sConjugale;
+		this. telephone = telephone;		//9
+		this.mail = mail;					//10
+		this.sConjugale = sConjugale;		//11
 		
-		this.nbEnfant = nbEnfant;
-		this.aMedical =aMedical ;
-		this.fonction=fonction ;
+		this.nbEnfant = nbEnfant;			//12
+		this.aMedical =aMedical ;			//13
+		this.fonction=fonction ;			//14
 		
-		this.dateEmbauche = dateEmbauche ;
-		this.salaire =salaire ;
-		this.nbConges = nbConges;
+		this.dateEmbauche = dateEmbauche ;	//15
+		this.salaire =salaire ;				//16
+		this.nbConges = nbConges;			//17
 		
-		this.nbCongesRestants = nbCongesRestants;
-		this.dateFin = dateFin;
+		this.nbCongesRestants = nbCongesRestants;//18
+		this.dateFin = dateFin;						//19
 		
 	}
 
@@ -96,14 +98,14 @@ public class Employe {
 	 * @return the nomJeuneFille
 	 */
 	public String getNomJeuneFille() {
-		return nom_Jeune_Fille;
+		return nomJeuneFille;
 	}
 
 	/**
 	 * @param nomJeuneFille the nomJeuneFille to set
 	 */
 	public void setNomJeuneFille(String nomJeuneFille) {
-		this.nom_Jeune_Fille = nomJeuneFille;
+		this.nomJeuneFille = nomJeuneFille;
 	}
 
 	/**
@@ -165,14 +167,14 @@ public class Employe {
 	/**
 	 * @return the telephone
 	 */
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
 	/**
 	 * @param telephone the telephone to set
 	 */
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 
@@ -207,14 +209,14 @@ public class Employe {
 	/**
 	 * @return the nbEnfant
 	 */
-	public int getNbEnfant() {
+	public String getNbEnfant() {
 		return nbEnfant;
 	}
 
 	/**
 	 * @param nbEnfant the nbEnfant to set
 	 */
-	public void setNbEnfant(int nbEnfant) {
+	public void setNbEnfant(String nbEnfant) {
 		this.nbEnfant = nbEnfant;
 	}
 
@@ -249,92 +251,99 @@ public class Employe {
 	/**
 	 * @return the dateEmbauche
 	 */
-	public Date getDateEmbauche() {
+	public String getDateEmbauche() {
 		return dateEmbauche;
 	}
 
 	/**
 	 * @param dateEmbauche the dateEmbauche to set
 	 */
-	public void setDateEmbauche(Date dateEmbauche) {
+	public void setDateEmbauche(String dateEmbauche) {
 		this.dateEmbauche = dateEmbauche;
 	}
 
 	/**
 	 * @return the salaire
 	 */
-	public Float getSalaire() {
+	public String getSalaire() {
 		return salaire;
 	}
 
 	/**
 	 * @param salaire the salaire to set
 	 */
-	public void setSalaire(Float salaire) {
+	public void setSalaire(String salaire) {
 		this.salaire = salaire;
 	}
 
 	/**
 	 * @return the nbConges
 	 */
-	public int getNbConges() {
+	public String getNbConges() {
 		return nbConges;
 	}
 
 	/**
 	 * @param nbConges the nbConges to set
 	 */
-	public void setNbConges(int nbConges) {
+	public void setNbConges(String nbConges) {
 		this.nbConges = nbConges;
 	}
 
 	/**
 	 * @return the nbCongesRestants
 	 */
-	public int getNbCongesRestants() {
+	public String getNbCongesRestants() {
 		return nbCongesRestants;
 	}
 
 	/**
 	 * @param nbCongesRestants the nbCongesRestants to set
 	 */
-	public void setNbCongesRestants(int nbCongesRestants) {
+	public void setNbCongesRestants(String nbCongesRestants) {
 		this.nbCongesRestants = nbCongesRestants;
 	}
 
 	/**
 	 * @return the dateFin
 	 */
-	public Date getDateFin() {
+	public String getDateFin() {
 		return dateFin;
 	}
 
 	/**
 	 * @param dateFin the dateFin to set
 	 */
-	public void setDateFin(Date dateFin) {
+	public void setDateFin(String dateFin) {
 		this.dateFin = dateFin;
 	}
 
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
 	/**
-	 * @return the nom_Jeune_Fille
+	 * @return the civilite
 	 */
-	public String getNom_Jeune_Fille() {
-		return nom_Jeune_Fille;
+	public String getCivilite() {
+		return civilite;
 	}
 
 	/**
-	 * @param nom_Jeune_Fille the nom_Jeune_Fille to set
+	 * @param civilite the civilite to set
 	 */
-	public void setNom_Jeune_Fille(String nom_Jeune_Fille) {
-		this.nom_Jeune_Fille = nom_Jeune_Fille;
+	public void setCivilite(String civilite) {
+		this.civilite = civilite;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	

@@ -480,7 +480,7 @@ public class GestionRH {
 				try {
 					
 		conn = ConnectionFactory.getConnection();		
-		pst = conn.prepareStatement("SELECT nom, prenom, adresse, login, motDePasse, nomDeJeuneFille, telephone, mail, situationConjugale, nombreEnfants, entecedantMedicale,  dateEmbauche, salaire, nombreConge, nombreCongeRestant, dateFinContrat, departement, fonction from employe where id_employé= ?");
+		pst = conn.prepareStatement("SELECT nom, prenom, adresse, login, motDePasse, nomDeJeuneFille, telephone, mail, situationConjugale, nombreEnfants, entecedantMedicale,  dateEmbauche, salaire, nombreConge, nombreCongeRestant, dateFinContrat, departement, fonction from employe where id_employe= ?");
 		pst.setString(1, id);	
 		rst= pst.executeQuery();
 		
@@ -503,8 +503,10 @@ public class GestionRH {
 							congeRestantTxt = rst.getString(15);
 							dateFinTxt  	= rst.getString(16);
 							departementTxt= rst.getString(17);
-							int deptId = 0;
 							fonctionTxt = rst.getString(18);
+							
+							
+							int deptId = 0;
 							int fonctionId = 0;
 							
 							for (int i = 0; i < departement.length; i++) {
@@ -526,6 +528,8 @@ public class GestionRH {
 							
 							departementBox.setSelectedIndex(deptId);
 							fonctionBox.setSelectedIndex(fonctionId);
+							
+							
 							
 							textNom				.setText(nomTxt);
 							textPrenom			.setText(prenomTxt);
@@ -664,7 +668,7 @@ public class GestionRH {
 				try {
 					conn = ConnectionFactory.getConnection();		
 //					nom, prenom, , login, telephone, mail, nombreConge, nombreCongeRestant
-					pst = conn.prepareStatement("SELECT id_employé, nom, prenom, mail, adresse, telephone, departement, fonction, salaire, nombreConge, nombreCongeRestant from employe");
+					pst = conn.prepareStatement("SELECT id_employe, nom, prenom, mail, adresse, telephone, departement, fonction, salaire, nombreConge, nombreCongeRestant from employe");
 						 
 					rst= pst.executeQuery();
 					

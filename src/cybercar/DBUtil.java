@@ -32,7 +32,7 @@ public class DBUtil {
 		setPreparedStatementProperties(/*employe.getId(), */
 									   employe.getNom(),			//1
 									   employe.getPrenom(),			//1
-									   employe.getNom_Jeune_Fille(),	//2
+									   employe.getNomJeuneFille(),	//2
 									   employe.getAdresse(),		//3
 									   employe.getLogin(),			//4
 									   employe.getMotDePasse(),		//5
@@ -114,45 +114,45 @@ public class DBUtil {
 	 * @return
 	 * @throws SQLException
 	 */
-	public static List<Employe> getAllEmploye() throws SQLException {
-		connection = ConnectionFactory.getConnection();
-		preparedStatement = connection.prepareStatement(QueryStatement.SELECT_ALL_EMPLOYE_QUERY);
-		
-		resultSet = preparedStatement.executeQuery();
-		
-		employeList.clear();
-		
-		
-		while (resultSet.next()) {
-			Employe employe = new Employe();
-			
-			employe.setNom          	(resultSet.getString(1));
-			employe.setPrenom       	(resultSet.getString(2));
-			employe.setNomJeuneFille	(resultSet.getString(3));
-			employe.setAdresse			(resultSet.getString(4));
-			employe.setLogin			(resultSet.getString(5));;
-			employe.setMotDePasse		(resultSet.getString(6));
-			employe.setDepartement		(resultSet.getString(7));
-			employe.setTelephone		(resultSet.getInt(8));
-			employe.setMail				(resultSet.getString(9));
-			employe.setsConjugale		(resultSet.getString(10));
-			employe.setNbEnfant			(resultSet.getInt(11));
-			employe.setaMedical			(resultSet.getString(12));
-			employe.setFonction			(resultSet.getString(13));
-			employe.setDateEmbauche		(resultSet.getDate(14));
-			employe.setSalaire			(resultSet.getFloat(15));
-			employe.setNbEnfant			(resultSet.getInt(16));
-			employe.setNbConges			(resultSet.getInt(17));
-			employe.setNbCongesRestants	(resultSet.getInt(18));
-			employe.setDateFin			(resultSet.getDate(19));
-			
-			
-			
-			employeList.add(employe);
-		}
-
-		return employeList;
-	}
+//	public static List<Employe> getAllEmploye() throws SQLException {
+//		connection = ConnectionFactory.getConnection();
+//		preparedStatement = connection.prepareStatement(QueryStatement.SELECT_ALL_EMPLOYE_QUERY);
+//		
+//		resultSet = preparedStatement.executeQuery();
+//		
+//		employeList.clear();
+//		
+//		
+//		while (resultSet.next()) {
+//			Employe employe = new Employe();
+//			
+//			employe.setNom          	(resultSet.getString(1));
+//			employe.setPrenom       	(resultSet.getString(2));
+//			employe.setNomJeuneFille	(resultSet.getString(3));
+//			employe.setAdresse			(resultSet.getString(4));
+//			employe.setLogin			(resultSet.getString(5));;
+//			employe.setMotDePasse		(resultSet.getString(6));
+//			employe.setDepartement		(resultSet.getString(7));
+//			employe.setTelephone		(resultSet.getInt(8));
+//			employe.setMail				(resultSet.getString(9));
+//			employe.setsConjugale		(resultSet.getString(10));
+//			employe.setNbEnfant			(resultSet.getInt(11));
+//			employe.setaMedical			(resultSet.getString(12));
+//			employe.setFonction			(resultSet.getString(13));
+//			employe.setDateEmbauche		(resultSet.getDate(14));
+//			employe.setSalaire			(resultSet.getFloat(15));
+//			employe.setNbEnfant			(resultSet.getInt(16));
+//			employe.setNbConges			(resultSet.getInt(17));
+//			employe.setNbCongesRestants	(resultSet.getInt(18));
+//			employe.setDateFin			(resultSet.getDate(19));
+//			
+//			
+//			
+//			employeList.add(employe);
+//		}
+//
+//		return employeList;
+//	}
 
 	/**
 	 * 

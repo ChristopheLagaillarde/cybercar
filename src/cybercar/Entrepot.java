@@ -146,7 +146,7 @@ public class Entrepot {
 						
 						Class.forName("com.mysql.jdbc.Driver");
 						
-						Connection conn = DriverManager.getConnection("jdbc:mysql://sql11.freesqldatabase.com/sql11488330","sql11488330","ry383CQtk6");
+						Connection conn = DriverManager.getConnection("jdbc:mysql://sql11.freesqldatabase.com/sql11489524","sql11489524","AKWlgpbHDy");
 						
 						String sql1 = "Select * From sql11488330.voiture where Entrepôt = 'Plaisance' ";
 						PreparedStatement stmt = conn.prepareStatement(sql1);
@@ -167,9 +167,9 @@ public class Entrepot {
 					
 					Class.forName("com.mysql.jdbc.Driver");
 					
-					Connection conn = DriverManager.getConnection("jdbc:mysql://sql11.freesqldatabase.com/sql11488330","sql11488330","ry383CQtk6");
+					Connection conn = DriverManager.getConnection("jdbc:mysql://sql11.freesqldatabase.com/sql11489524","sql11489524","AKWlgpbHDy");
 					
-					String sql = "Select * From sql11488330.voiture";
+					String sql = "Select * From sql11489524.voiture";
 					PreparedStatement stmt = conn.prepareStatement(sql);
 					ResultSet rs = stmt.executeQuery();
 					
