@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.security.Key;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLNonTransientConnectionException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.awt.Font;
@@ -62,20 +63,20 @@ public class FenetreLogin extends JFrame {
 
 		}
 		ouvreFluxEcrireDansFichierLogLogin = new BufferedWriter(ecrireDansFichierLogLogin);
-		
+
 		dateLogEnClair = "Date : " + heureEtDateDuLogin.format(maintenant);
 		loginUtiliseEnClair = "Login utilisé : " + loginUtilise;
 		connectionReussiEnClair = "Connection réussite : " + connectionReussite;
-		
+
 		try {
 			clefSymetrique = ApiBlowfish.generateKey();
-			
+
 			dateLogChiffre = ApiBlowfish.encryptInString(dateLogEnClair,clefSymetrique);
 			loginUtiliseChiffre = ApiBlowfish.encryptInString(loginUtiliseEnClair,clefSymetrique);
 			connectionReussiChiffre = ApiBlowfish.encryptInString(connectionReussiEnClair,clefSymetrique);
 
 		} catch (Exception erreurCryptage) {
-		
+
 		}
 
 		try {
@@ -145,25 +146,23 @@ public class FenetreLogin extends JFrame {
 	 * @param motDePasseHashe
 	 * @return fonctionDansLEntreprise la fonction dans l'entreprise
 	 */
-	String fonctionDeLEmployeDansLEntreprise(String motDePasseHashe) {
+	String fonctionDeLEmployeDansLEntreprise(String motDePasseHashe){
 		String fonctionDansLEntreprise = null;
 		ConnectionFactory connectionBDPourVerifierFonction = null;
 		ResultSet resultatSelectFonctionEmploye = null;
 
 		connectionBDPourVerifierFonction = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"AKWlgpbHDy");
-		
+
 		try {
 			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_LA_FONCTION_DE_LUTILISATEUR(barreLogin.getText(),motDePasseHashe));
-			
+
 			while(resultatSelectFonctionEmploye.next()) {
 				fonctionDansLEntreprise = resultatSelectFonctionEmploye.getString("fonction");
 			}
 			resultatSelectFonctionEmploye.close();
 
 		} catch (SQLException requeteNonValide) {
-			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable");
-			requeteNonValide.printStackTrace();
-			System.out.println(requeteNonValide);
+			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable"); 
 		}
 
 		return fonctionDansLEntreprise;
@@ -177,22 +176,22 @@ public class FenetreLogin extends JFrame {
 		ConnectionFactory connectionBDPourVerifierSiPremierConnection = null;
 		ResultSet resultatSelectPremierConnection  = null;
 		String donnePriveEtSensible = "";
-		
+
 		barreLogin.getText();
 
 		try {
 			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"AKWlgpbHDy");
 
 			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_DONNEE_PERSO_ET_PRIVE_UTILISATEUR(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
-			
+
 			while(resultatSelectPremierConnection.next()) {
 				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
 				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("nomDeJeuneFille"));
 				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("situationConjugale"));
-				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("entecedantMedicale"));
+				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("antecedantMedicale"));
 			}
 		} catch (SQLException requeteNonValde) {
-			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable");
+			JOptionPane.showMessageDialog(null, "erreur recherche si 1er connection");
 		} 
 		return donnePriveEtSensible.equals(" A remplirA remplirA remplirA remplir"); 
 	}
