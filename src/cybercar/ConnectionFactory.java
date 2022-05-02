@@ -25,6 +25,7 @@ public class ConnectionFactory {
 	ResultSet resultatRequete;
 	Statement requeteAFaire;
 
+	@SuppressWarnings("unused")
 	private static String driverClassName;
 	private static String connectionUrl;
 	private static String dbUser;

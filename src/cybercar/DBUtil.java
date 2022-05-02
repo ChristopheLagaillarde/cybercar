@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 
@@ -16,7 +14,6 @@ public class DBUtil {
 	private static Connection connection;
 	private static PreparedStatement preparedStatement;
 	private static ResultSet resultSet = null;
-	private static List<Employe> employeList = new ArrayList<Employe>();
 
 	/**
 	 * 

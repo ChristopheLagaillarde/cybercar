@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.security.Key;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLNonTransientConnectionException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.awt.Font;
