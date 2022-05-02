@@ -528,7 +528,7 @@ public class Entrepot {
         // 
 				
 				try {
-					DButil.addCar(voiture);
+					DButilEntrepot.addCar(voiture);
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -775,7 +775,7 @@ public class Entrepot {
            voiture.setid_voiture(id_voiture);
 			
 			try {
-				DButil.updateCar(voiture);
+				DButilEntrepot.updateCar(voiture);
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -859,7 +859,7 @@ public class Entrepot {
 		
 				 
 				 try {
-						DButil.deleteCar(voiture);
+						DButilEntrepot.deleteCar(voiture);
 					} catch (SQLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
