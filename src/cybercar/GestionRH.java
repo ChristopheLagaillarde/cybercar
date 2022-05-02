@@ -1,4 +1,4 @@
-package CyberCar;
+package cybercar;
 
 import java.awt.EventQueue;
 

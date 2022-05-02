@@ -14,6 +14,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.security.Key;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -44,6 +45,14 @@ public class FenetreLogin extends JFrame {
 		BufferedWriter ouvreFluxEcrireDansFichierLogLogin = null;
 		File fichierLogLogin = null;
 		FileWriter ecrireDansFichierLogLogin = null;
+		String dateLogEnClair = null;
+		String dateLogChiffre = null;
+		String loginUtiliseEnClair = null;
+		String loginUtiliseChiffre = null;
+		String connectionReussiEnClair = null;
+		String connectionReussiChiffre = null;
+		Key clefSymetrique = null;
+
 
 		fichierLogLogin = new File(addresseDuFichier);
 		try {
@@ -53,15 +62,30 @@ public class FenetreLogin extends JFrame {
 
 		}
 		ouvreFluxEcrireDansFichierLogLogin = new BufferedWriter(ecrireDansFichierLogLogin);
+		
+		dateLogEnClair = "Date : " + heureEtDateDuLogin.format(maintenant);
+		loginUtiliseEnClair = "Login utilisé : " + loginUtilise;
+		connectionReussiEnClair = "Connection réussite : " + connectionReussite;
+		
+		try {
+			clefSymetrique = ApiBlowfish.generateKey();
+			
+			dateLogChiffre = ApiBlowfish.encryptInString(dateLogEnClair,clefSymetrique);
+			loginUtiliseChiffre = ApiBlowfish.encryptInString(loginUtiliseEnClair,clefSymetrique);
+			connectionReussiChiffre = ApiBlowfish.encryptInString(connectionReussiEnClair,clefSymetrique);
+
+		} catch (Exception erreurCryptage) {
+		
+		}
 
 		try {
 			ouvreFluxEcrireDansFichierLogLogin.newLine();     
 			ouvreFluxEcrireDansFichierLogLogin.newLine();
-			ouvreFluxEcrireDansFichierLogLogin.write("Date : " + heureEtDateDuLogin.format(maintenant));
+			ouvreFluxEcrireDansFichierLogLogin.write(dateLogChiffre);
 			ouvreFluxEcrireDansFichierLogLogin.newLine();
-			ouvreFluxEcrireDansFichierLogLogin.write("Login utilisé : " + loginUtilise);
+			ouvreFluxEcrireDansFichierLogLogin.write(loginUtiliseChiffre);
 			ouvreFluxEcrireDansFichierLogLogin.newLine();
-			ouvreFluxEcrireDansFichierLogLogin.write("Connection réussite : " + connectionReussite);
+			ouvreFluxEcrireDansFichierLogLogin.write(connectionReussiChiffre);
 
 		}
 		catch(Exception erreurLog) {

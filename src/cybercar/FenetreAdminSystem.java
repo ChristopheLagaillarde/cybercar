@@ -23,7 +23,7 @@ public class FenetreAdminSystem extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel panelPrincipal;
+	private JPanel contenuDeLaFenetre;
 
 	/**
 	 * Le main de FenetreAdminSystem
@@ -52,14 +52,14 @@ public class FenetreAdminSystem extends JFrame {
 		JButton boutonGererLesDroits = null;
 		JButton boutonVoirLog = null;
 
-		panelPrincipal = new JPanel();
+		contenuDeLaFenetre = new JPanel();
 		adminSystemEcrit = new JLabel("Admin Systeme");
 		boutonGererLesDroits = new JButton("Gérer les droits des utilisateurs");
 		boutonVoirLog = new JButton("Voir log");
 		
-		panelPrincipal.setLayout(null);
-		setContentPane(panelPrincipal);
-		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contenuDeLaFenetre.setLayout(null);
+		setContentPane(contenuDeLaFenetre);
+		contenuDeLaFenetre.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		adminSystemEcrit.setFont(new Font("Tahoma", Font.PLAIN, 27));
@@ -67,9 +67,9 @@ public class FenetreAdminSystem extends JFrame {
 		boutonGererLesDroits.setBounds(29, 82, 382, 41);
 		boutonVoirLog.setBounds(29, 158, 382, 41);
 
-		panelPrincipal.add(adminSystemEcrit);
-		panelPrincipal.add(boutonGererLesDroits);
-		panelPrincipal.add(boutonVoirLog);
+		contenuDeLaFenetre.add(adminSystemEcrit);
+		contenuDeLaFenetre.add(boutonGererLesDroits);
+		contenuDeLaFenetre.add(boutonVoirLog);
 
 		boutonGererLesDroits.addActionListener((clickBoutton -> 
 			FenetreGererDroit.main(null)

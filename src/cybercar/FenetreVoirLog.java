@@ -5,9 +5,9 @@ import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JTextPane;
 
 public class FenetreVoirLog extends JFrame {
 
@@ -15,7 +15,7 @@ public class FenetreVoirLog extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+	private JPanel contenuDeLaFenetre;
 
 	/**
 	 * Launch the application.
@@ -23,10 +23,10 @@ public class FenetreVoirLog extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(() -> {
 			try {
-				FenetreVoirLog frame = new FenetreVoirLog();
-				frame.setVisible(true);
-			} catch (Exception e) {
-				e.printStackTrace();
+				FenetreVoirLog laFenetreVoirLog = new FenetreVoirLog();
+				laFenetreVoirLog.setVisible(true);
+			} catch (Exception crashFenetreLog) {
+
 			}
 
 		});
@@ -36,16 +36,20 @@ public class FenetreVoirLog extends JFrame {
 	 * Create the frame.
 	 */
 	public FenetreVoirLog() {
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contenuDeLaFenetre = new JPanel();
+		contenuDeLaFenetre.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contenuDeLaFenetre);
+		contenuDeLaFenetre.setLayout(null);
 
 		JLabel logLoginEcrit = new JLabel("Log des log in");
 		logLoginEcrit.setBounds(156, 21, 138, 20);
 		logLoginEcrit.setFont(new Font("Arial", Font.BOLD, 17));
-		contentPane.add(logLoginEcrit);
+		contenuDeLaFenetre.add(logLoginEcrit);
+		
+		JTextPane txtpnV = new JTextPane();
+		txtpnV.setText("v4");
+		txtpnV.setBounds(24, 41, 400, 198);
+		contenuDeLaFenetre.add(txtpnV);
 	}
 }
