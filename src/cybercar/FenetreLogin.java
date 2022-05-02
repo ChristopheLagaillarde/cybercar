@@ -29,6 +29,7 @@ import javax.swing.WindowConstants;
 public class FenetreLogin extends JFrame {
 
 	String adresseFichierLog = "logLogin.txt";
+	String loginEtMdpBdd = "sql11488330";
 
 	/**
 	 * Fonction permettant dans sauvegarder les tentatives de connection dans un fichier log
@@ -125,10 +126,10 @@ public class FenetreLogin extends JFrame {
 		ConnectionFactory connectionBDPourVerifierFonction = null;
 		ResultSet resultatSelectFonctionEmploye = null;
 
-		connectionBDPourVerifierFonction = new ConnectionFactory("sql11488330","sql11488330","ry383CQtk6");
+		connectionBDPourVerifierFonction = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"ry383CQtk6");
 		
 		try {
-			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECTLAFONCTIONDELUTILISATEUR(barreLogin.getText(),motDePasseHashe));
+			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_LA_FONCTION_DE_LUTILISATEUR(barreLogin.getText(),motDePasseHashe));
 			
 			while(resultatSelectFonctionEmploye.next()) {
 				fonctionDansLEntreprise = resultatSelectFonctionEmploye.getString("fonction");
@@ -154,9 +155,9 @@ public class FenetreLogin extends JFrame {
 		barreLogin.getText();
 
 		try {
-			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("sql11488330","sql11488330","ry383CQtk6");
+			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"ry383CQtk6");
 
-			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECTDONNEPERSOETPRIVEUTILISATEUR(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
+			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_DONNEE_PERSO_ET_PRIVE_UTILISATEUR(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
 			
 			while(resultatSelectPremierConnection.next()) {
 				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));

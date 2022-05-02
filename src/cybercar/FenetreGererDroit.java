@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -20,14 +21,12 @@ public class FenetreGererDroit extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FenetreGererDroit frame = new FenetreGererDroit();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+		EventQueue.invokeLater(() -> {
+			try {
+				FenetreGererDroit frame = new FenetreGererDroit();
+				frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		});
 	}
@@ -36,13 +35,13 @@ public class FenetreGererDroit extends JFrame {
 	 * Create the frame.
 	 */
 	public FenetreGererDroit() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel gererLesDroitsEcrits = new JLabel("Gérer les droits ");
 		gererLesDroitsEcrits.setFont(new Font("Arial", Font.BOLD, 18));
 		gererLesDroitsEcrits.setBounds(149, 0, 148, 36);

@@ -30,7 +30,7 @@ class TestLoginEchec {
 
 			motDePasseHashe = Hash.hashage(testMauvaisLogin.barreMotDePasse.getText(),"SHA3-256");
 
-			resultatSelectFonctionEmploye = connectionBDPourLogin.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECTLAFONCTIONDELUTILISATEUR(testMauvaisLogin.barreLogin.getText(),motDePasseHashe));
+			resultatSelectFonctionEmploye = connectionBDPourLogin.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_LA_FONCTION_DE_LUTILISATEUR(testMauvaisLogin.barreLogin.getText(),motDePasseHashe));
 			while(resultatSelectFonctionEmploye.next()) {
 				fonctionDansLentreprise = resultatSelectFonctionEmploye.getString("fonction");
 			}

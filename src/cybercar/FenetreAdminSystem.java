@@ -71,13 +71,13 @@ public class FenetreAdminSystem extends JFrame {
 		panelPrincipal.add(boutonGererLesDroits);
 		panelPrincipal.add(boutonVoirLog);
 
-		boutonGererLesDroits.addActionListener((clickBoutton -> {
-			FenetreGererDroit.main(null);
-		}));
+		boutonGererLesDroits.addActionListener((clickBoutton -> 
+			FenetreGererDroit.main(null)
+		));
 
 
-		boutonVoirLog.addActionListener((clickBoutton -> {
-			FenetreVoirLog.main(null);
-		}));
+		boutonVoirLog.addActionListener((clickBoutton -> 
+			FenetreVoirLog.main(null)
+		));
 	}
 }
