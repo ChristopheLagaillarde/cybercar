@@ -128,7 +128,7 @@ public class FenetreLogin extends JFrame {
 		connectionBDPourVerifierFonction = new ConnectionFactory("sql11488330","sql11488330","ry383CQtk6");
 		
 		try {
-			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectLaFonctionDeLutilisateur(barreLogin.getText(),motDePasseHashe));
+			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECTLAFONCTIONDELUTILISATEUR(barreLogin.getText(),motDePasseHashe));
 			
 			while(resultatSelectFonctionEmploye.next()) {
 				fonctionDansLEntreprise = resultatSelectFonctionEmploye.getString("fonction");
@@ -156,7 +156,7 @@ public class FenetreLogin extends JFrame {
 		try {
 			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory("sql11488330","sql11488330","ry383CQtk6");
 
-			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.selectDonnePersoEtPriveUtilisateur(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
+			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECTDONNEPERSOETPRIVEUTILISATEUR(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
 			
 			while(resultatSelectPremierConnection.next()) {
 				donnePriveEtSensible = donnePriveEtSensible.concat(resultatSelectPremierConnection.getString("civilite"));
