@@ -13,12 +13,14 @@
 // Déclaration des bibliotheques de fonctions...
 package cybercar;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.security.Key;
 
@@ -33,7 +35,7 @@ public class ApiFileCipher {
 	 * @return void
 	 */
 
-	public static void chiffrerFichierTexte(String nomFichierAChiffrer, String adresseFichierChiffre, Key clefSymetrique) {
+	public static void chiffrerFichierTexte(String nomFichierAChiffrer, String adresseFichierChiffre, Key cleSymetrique) {
 		String adresseFichierAChiffrer = "C://Users/Lagaillarde/eclipse-workspace-Java/Blowfish/src/" + nomFichierAChiffrer + ".txt"; 
 		byte[] byteDuFichierAChiffrer = null;
 		byte[] byteDuFichierChiffre = null;
@@ -59,7 +61,7 @@ public class ApiFileCipher {
 
 		
 		try {
-			byteDuFichierChiffre = ApiBlowfish.encryptInByte(byteDuFichierAChiffrer, clefSymetrique);
+			byteDuFichierChiffre = ApiBlowfish.encryptInByte(byteDuFichierAChiffrer, cleSymetrique);
 		} catch (Exception echecApiBlowfish) {
 			System.err.println("ApiBlowfish : L'encryptage ne fonctionne pas");
 		}	
@@ -90,22 +92,23 @@ public class ApiFileCipher {
 	 * @return texteFichierDecrypteEnString : un String du texte déchiffré
 	 */
 	
-	public static String dechiffrerFichierTexte(String addresseFichierADechiffrer, Key clefSymetrique) {
-		byte[] texteFichierDecrypteEnByte = null;
+	public static String dechiffrerFichierTexte(String addresseFichierADechiffrer, Key cleSymetrique) {
+		String texteFichierDecrypteEnByte = "";
 		try {
 			File fichierCrypte = new File(addresseFichierADechiffrer);
-			FileInputStream lireFichierCrypte = new FileInputStream(fichierCrypte);
-			DataInputStream ouvreFluxLireDataFichierCrypte=  new DataInputStream(lireFichierCrypte); 
+			FileReader lireFichierCrypte = new FileReader(fichierCrypte);
+			BufferedReader ouvreFluxLireDataFichierCrypte=  new BufferedReader(lireFichierCrypte); 
 
-			texteFichierDecrypteEnByte = ouvreFluxLireDataFichierCrypte.readAllBytes();
+			texteFichierDecrypteEnByte = ouvreFluxLireDataFichierCrypte.readLine();
 		
 			ouvreFluxLireDataFichierCrypte.close();
 			lireFichierCrypte.close();
 			
 			
 			try {
-				texteFichierDecrypteEnByte = ApiBlowfish.decryptInByte(texteFichierDecrypteEnByte, clefSymetrique);
+				texteFichierDecrypteEnByte = ApiBlowfish.decryptInString(texteFichierDecrypteEnByte, cleSymetrique);
 			} catch (Exception erreurDecryptage) {
+				erreurDecryptage.printStackTrace();
 				System.err.println("Echec du décryptage");
 			}
 			

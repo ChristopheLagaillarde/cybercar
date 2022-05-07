@@ -62,7 +62,6 @@ public class ApiBlowfish {
 	public static byte[] decryptInByte(byte[] textChiffre, Key clef) throws Exception {
 
 		Cipher dechiffre = Cipher.getInstance("Blowfish");
-
 		dechiffre.init(Cipher.DECRYPT_MODE, clef);
 
 		return dechiffre.doFinal(textChiffre);// retourne au format octet
@@ -102,7 +101,7 @@ public class ApiBlowfish {
 
 		// doit décoder la chaine en base64
 
-		byte[] dechiffre = Base64.getDecoder().decode(textChiffre);
+		byte[] dechiffre = Base64.getDecoder().decode(textChiffre.trim());
 
 		dechiffre = decryptInByte(dechiffre, clef);
 

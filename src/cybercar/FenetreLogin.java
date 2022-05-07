@@ -12,9 +12,12 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.io.BufferedWriter;
 import java.io.File;
+
 import java.io.FileWriter;
 import java.io.IOException;
+
 import java.security.Key;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -29,8 +32,10 @@ import javax.swing.WindowConstants;
  */
 public class FenetreLogin extends JFrame {
 
-	String adresseFichierLog = "logLogin.txt";
-	String loginEtMdpBdd = "sql11489524";
+	String adresseFichierLog = "logLogin.cryp";
+	String nomBDD = "cybercar";
+	String username = "root";
+	String motDePasseBDD = "";
 
 	/**
 	 * Fonction permettant dans sauvegarder les tentatives de connection dans un fichier log
@@ -45,14 +50,10 @@ public class FenetreLogin extends JFrame {
 		BufferedWriter ouvreFluxEcrireDansFichierLogLogin = null;
 		File fichierLogLogin = null;
 		FileWriter ecrireDansFichierLogLogin = null;
-		String dateLogEnClair = null;
-		String dateLogChiffre = null;
-		String loginUtiliseEnClair = null;
-		String loginUtiliseChiffre = null;
-		String connectionReussiEnClair = null;
-		String connectionReussiChiffre = null;
-		Key clefSymetrique = null;
-
+		String motDePasse = "uSD*m$n3Vab^@HDy";
+		String adresseFichierContenantCle = "src\\cybercar\\cleSymetrique.ks";
+		String logConnectionChiffre = null;
+		String logConnection = null;
 
 		fichierLogLogin = new File(addresseDuFichier);
 		try {
@@ -62,33 +63,20 @@ public class FenetreLogin extends JFrame {
 
 		}
 		ouvreFluxEcrireDansFichierLogLogin = new BufferedWriter(ecrireDansFichierLogLogin);
-
-		dateLogEnClair = "Date : " + heureEtDateDuLogin.format(maintenant);
-		loginUtiliseEnClair = "Login utilisé : " + loginUtilise;
-		connectionReussiEnClair = "Connection réussite : " + connectionReussite;
+		logConnection = "Date : " + heureEtDateDuLogin.format(maintenant) + "\nLogin utilisé : " + loginUtilise + "\nConnection réussite : " + connectionReussite;
 
 		try {
-			clefSymetrique = ApiBlowfish.generateKey();
-
-			dateLogChiffre = ApiBlowfish.encryptInString(dateLogEnClair,clefSymetrique);
-			loginUtiliseChiffre = ApiBlowfish.encryptInString(loginUtiliseEnClair,clefSymetrique);
-			connectionReussiChiffre = ApiBlowfish.encryptInString(connectionReussiEnClair,clefSymetrique);
-
+			Key clefSymetrique = GererCleCryptographie.recuperationCle(adresseFichierContenantCle, motDePasse);
+			logConnectionChiffre = ApiBlowfish.encryptInString(logConnection, clefSymetrique);
 		} catch (Exception erreurCryptage) {
 
 		}
 
 		try {
-			ouvreFluxEcrireDansFichierLogLogin.newLine();     
-			ouvreFluxEcrireDansFichierLogLogin.newLine();
-			ouvreFluxEcrireDansFichierLogLogin.write(dateLogChiffre);
-			ouvreFluxEcrireDansFichierLogLogin.newLine();
-			ouvreFluxEcrireDansFichierLogLogin.write(loginUtiliseChiffre);
-			ouvreFluxEcrireDansFichierLogLogin.newLine();
-			ouvreFluxEcrireDansFichierLogLogin.write(connectionReussiChiffre);
-
+			ouvreFluxEcrireDansFichierLogLogin.write(logConnectionChiffre);
 		}
 		catch(Exception erreurLog) {
+			erreurLog.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erreur au niveau de l'écriture du log");
 		}
 		finally {
@@ -150,17 +138,17 @@ public class FenetreLogin extends JFrame {
 		ConnectionFactory connectionBDPourVerifierFonction = null;
 		ResultSet resultatSelectFonctionEmploye = null;
 
-		connectionBDPourVerifierFonction = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"AKWlgpbHDy");
+		connectionBDPourVerifierFonction = new ConnectionFactory(nomBDD, username, motDePasseBDD);
 
 		try {
 			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_LA_FONCTION_DE_LUTILISATEUR(barreLogin.getText(),motDePasseHashe));
-
 			while(resultatSelectFonctionEmploye.next()) {
 				fonctionDansLEntreprise = resultatSelectFonctionEmploye.getString("fonction");
 			}
 			resultatSelectFonctionEmploye.close();
 
 		} catch (SQLException requeteNonValide) {
+			requeteNonValide.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable"); 
 		}
 
@@ -179,7 +167,7 @@ public class FenetreLogin extends JFrame {
 		barreLogin.getText();
 
 		try {
-			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory(loginEtMdpBdd,loginEtMdpBdd,"AKWlgpbHDy");
+			connectionBDPourVerifierSiPremierConnection = new ConnectionFactory(nomBDD,username,motDePasseBDD);
 
 			resultatSelectPremierConnection = connectionBDPourVerifierSiPremierConnection.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_DONNEE_PERSO_ET_PRIVE_UTILISATEUR(barreLogin.getText(), Hash.hashage(barreMotDePasse.getText(),"SHA3-256")));
 
@@ -286,7 +274,7 @@ public class FenetreLogin extends JFrame {
 
 				else {
 					JOptionPane.showMessageDialog(null, "Login ou mots de passe incorrecte");
-					sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), false);
+					sauvegarderLoginDansFichierLog(adresseFichierLog, "intru@cybercar.com", false);
 				}
 			}
 
