@@ -34,7 +34,7 @@ public class FenetreAdminSystem extends JFrame {
 
 			try {
 				FenetreAdminSystem moduleAdminSystem = null;
-				moduleAdminSystem = new FenetreAdminSystem();
+				moduleAdminSystem = new FenetreAdminSystem(args);
 				moduleAdminSystem.setVisible(true);
 			} catch (Exception crashFenetre) {
 				JOptionPane.showMessageDialog(null, "Erreur au niveau de la fenêtre");
@@ -46,16 +46,19 @@ public class FenetreAdminSystem extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FenetreAdminSystem() {
+	public FenetreAdminSystem(String[] args) {
 
 		JLabel adminSystemEcrit = null;
 		JButton boutonGererLesDroits = null;
 		JButton boutonVoirLog = null;
+		JButton boutonChangerMonMotDePasse = null;
 
 		contenuDeLaFenetre = new JPanel();
 		adminSystemEcrit = new JLabel("Admin Systeme");
 		boutonGererLesDroits = new JButton("Gérer les droits des utilisateurs");
 		boutonVoirLog = new JButton("Voir log");
+		boutonChangerMonMotDePasse = new JButton("Changer mon mot de passe");
+
 		
 		contenuDeLaFenetre.setLayout(null);
 		setContentPane(contenuDeLaFenetre);
@@ -65,19 +68,28 @@ public class FenetreAdminSystem extends JFrame {
 		adminSystemEcrit.setFont(new Font("Tahoma", Font.PLAIN, 27));
 		adminSystemEcrit.setBounds(95, 0, 262, 86);
 		boutonGererLesDroits.setBounds(29, 82, 382, 41);
-		boutonVoirLog.setBounds(29, 158, 382, 41);
+		boutonVoirLog.setBounds(29, 145, 382, 41);
+		boutonChangerMonMotDePasse.setBounds(29, 209, 382, 41);
+
 
 		contenuDeLaFenetre.add(adminSystemEcrit);
 		contenuDeLaFenetre.add(boutonGererLesDroits);
 		contenuDeLaFenetre.add(boutonVoirLog);
+		contenuDeLaFenetre.add(boutonChangerMonMotDePasse);
+
 
 		boutonGererLesDroits.addActionListener((clickBoutton -> 
-			FenetreGererDroit.main(null)
+			FenetreGererDroit.main(args)
 		));
 
 
 		boutonVoirLog.addActionListener((clickBoutton -> 
-			FenetreVoirLog.main(null)
+			FenetreVoirLog.main(args)
 		));
+		
+		boutonChangerMonMotDePasse.addActionListener((clickBoutton -> 
+		FenetreChangerMonMotDePasse.main(args)
+	));
+		
 	}
 }

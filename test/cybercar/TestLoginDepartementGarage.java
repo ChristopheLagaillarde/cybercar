@@ -10,7 +10,7 @@ class TestLoginDepartementGarage {
 		try {
 			FenetreLogin testLoginDepartementGarage = null;
 
-			testLoginDepartementGarage = new FenetreLogin();
+			testLoginDepartementGarage = new FenetreLogin(null);
 
 			testLoginDepartementGarage.barreLogin.setText("garagiste@cybercar.com");
 			testLoginDepartementGarage.barreMotDePasse.setText("44444444");

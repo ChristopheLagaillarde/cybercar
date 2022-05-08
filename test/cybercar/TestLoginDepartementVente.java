@@ -11,7 +11,7 @@ class TestLoginDepartementVente {
 			FenetreLogin testLoginDepartementVente = null;
 
 
-			testLoginDepartementVente = new FenetreLogin();
+			testLoginDepartementVente = new FenetreLogin(null);
 
 			testLoginDepartementVente.barreLogin.setText("vendeur@cybercar.com");
 			testLoginDepartementVente.barreMotDePasse.setText("11111111");

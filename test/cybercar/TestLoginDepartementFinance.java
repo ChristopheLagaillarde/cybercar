@@ -10,7 +10,7 @@ class TestLoginDepartementFinance {
 		try {
 			FenetreLogin testLoginDepartementFinance = null;
 
-			testLoginDepartementFinance = new FenetreLogin();
+			testLoginDepartementFinance = new FenetreLogin(null);
 
 			testLoginDepartementFinance.barreLogin.setText("employeFinance@cybercar.com");
 			testLoginDepartementFinance.barreMotDePasse.setText("55555555");

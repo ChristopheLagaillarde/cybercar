@@ -10,7 +10,7 @@ class TestLoginDepartementAdminSystem {
 		try {
 			FenetreLogin testLoginDepartementAdminSystem = null;
 
-			testLoginDepartementAdminSystem = new FenetreLogin();
+			testLoginDepartementAdminSystem = new FenetreLogin(null);
 
 			testLoginDepartementAdminSystem.barreLogin.setText("adminSystem@cybercar.com");
 			testLoginDepartementAdminSystem.barreMotDePasse.setText("22222222");

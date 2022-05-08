@@ -5,15 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
-
-import java.awt.Font;
+import javax.swing.JButton;
 /**
- * A MODIFIER/REMPLACER PLUS TARD
- * Fenetre pour le departement RH
+ * Fenetre vendeur permettant aux vendeur d'effectuer des ventes etc
  * @author Lagaillarde
  *
  */
@@ -34,7 +31,7 @@ public class FenetreVendeur extends JFrame {
 
 			try {
 				FenetreVendeur moduleVendeur = null;
-				moduleVendeur = new FenetreVendeur();
+				moduleVendeur = new FenetreVendeur(args);
 				moduleVendeur.setVisible(true);
 			} catch (Exception crashFenetre) {
 				JOptionPane.showMessageDialog(null, "Erreur au niveau de la fenêtre");
@@ -46,7 +43,7 @@ public class FenetreVendeur extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FenetreVendeur() {
+	public FenetreVendeur(String[] args) {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		panelPrincipal = new JPanel();
@@ -54,10 +51,19 @@ public class FenetreVendeur extends JFrame {
 		setContentPane(panelPrincipal);
 		panelPrincipal.setLayout(null);
 
-		JLabel moduleVenteEcrit = new JLabel("Module Vente");
-		moduleVenteEcrit.setFont(new Font("Tahoma", Font.PLAIN, 27));
-		moduleVenteEcrit.setBounds(174, 113, 173, 86);
-		panelPrincipal.add(moduleVenteEcrit);
-	}
+		JButton boutonModifierMDP = null;
 
+
+		boutonModifierMDP = new JButton("Modifier mon mot de passe");
+
+
+		boutonModifierMDP.setBounds(33, 192, 366, 42);
+
+
+		panelPrincipal.add(boutonModifierMDP);
+
+		boutonModifierMDP.addActionListener((clickBoutton -> 
+		FenetreChangerMonMotDePasse.main(args)
+				));
+	}
 }

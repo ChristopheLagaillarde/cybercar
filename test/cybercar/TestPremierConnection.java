@@ -10,7 +10,7 @@ class TestPremierConnection {
 		try {
 			FenetreLogin testLoginPremierConnection = null;
 
-			testLoginPremierConnection = new FenetreLogin();
+			testLoginPremierConnection = new FenetreLogin(null);
 
 			testLoginPremierConnection.barreLogin.setText("nouveau@cybercar.com");
 			testLoginPremierConnection.barreMotDePasse.setText("77777777");

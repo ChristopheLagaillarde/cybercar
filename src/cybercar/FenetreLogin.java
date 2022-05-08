@@ -100,32 +100,55 @@ public class FenetreLogin extends JFrame {
 	 * Renvoie vers le bon département
 	 * @param fonctionDansLentreprise
 	 */
-	void accedeASonDepartement(String fonctionDansLentreprise) {
+	void accedeASonDepartement(String[] args, String fonctionDansLentreprise) {
+		
 		if(fonctionDansLentreprise.equals("vendeur")) {
-			FenetreVendeur.main(null);
+			FenetreVendeur.main(args);
 		}
 
 		if(fonctionDansLentreprise.equals("adminSystem")) {
-			FenetreAdminSystem.main(null);
+			FenetreAdminSystem.main(args);
 		}
 
 		if(fonctionDansLentreprise.equals("employeRH")) {
-			GestionRH.main(null);
+			GestionRH.main(args);
 		}
 
 		if(fonctionDansLentreprise.equals("garagiste")) {
-			Entrepot.main(null);
+			Entrepot.main(args);
 		}
 
 		if(fonctionDansLentreprise.equals("employeFinance")) {
-			FenetreFinance.main(null);
+			FenetreFinance.main(args);
 		}
 
 		if(fonctionDansLentreprise.equals("employeSI")) {
-			FenetreSI.main(null);
+			FenetreSI.main(args);
 		}
 		sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
 		FenetreLogin.this.dispose();
+	}
+	
+	/**
+	 * Permet de récuperer l'id de l'employe dans l'entreprise
+	 * @param loginDeLemploye
+	 * @return idEmploye
+	 */
+	String idDeLEmployeDansLEntreprise(String loginDeLemploye) {
+		ResultSet resultatSelectIdEmploye = null;
+		ConnectionFactory connectionBDPourRecupererIdEmploye = null;
+		
+		connectionBDPourRecupererIdEmploye = new ConnectionFactory(nomBDD, username, motDePasseBDD);
+		try {
+			resultatSelectIdEmploye = connectionBDPourRecupererIdEmploye.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_ID_EMPLOYE(barreLogin.getText()));
+			while(resultatSelectIdEmploye.next()) {
+				loginDeLemploye = resultatSelectIdEmploye.getString("id_employé");
+			}
+			resultatSelectIdEmploye.close();
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, "erreur lors de la recherde de l'id de l'employé");
+		}
+		return loginDeLemploye;
 	}
 
 	/**
@@ -135,18 +158,18 @@ public class FenetreLogin extends JFrame {
 	 */
 	String fonctionDeLEmployeDansLEntreprise(String motDePasseHashe){
 		String fonctionDansLEntreprise = null;
-		ConnectionFactory connectionBDPourVerifierFonction = null;
+		ConnectionFactory connectionBDPourVerifierFonctionEtPrendreIdEmploye = null;
 		ResultSet resultatSelectFonctionEmploye = null;
 
-		connectionBDPourVerifierFonction = new ConnectionFactory(nomBDD, username, motDePasseBDD);
+		connectionBDPourVerifierFonctionEtPrendreIdEmploye = new ConnectionFactory(nomBDD, username, motDePasseBDD);
 
 		try {
-			resultatSelectFonctionEmploye = connectionBDPourVerifierFonction.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_LA_FONCTION_DE_LUTILISATEUR(barreLogin.getText(),motDePasseHashe));
+			resultatSelectFonctionEmploye = connectionBDPourVerifierFonctionEtPrendreIdEmploye.requeteAFaire.executeQuery(RequeteSQLCyberCar.SELECT_LA_FONCTION_DE_LUTILISATEUR(barreLogin.getText(),motDePasseHashe));
 			while(resultatSelectFonctionEmploye.next()) {
 				fonctionDansLEntreprise = resultatSelectFonctionEmploye.getString("fonction");
 			}
 			resultatSelectFonctionEmploye.close();
-
+			
 		} catch (SQLException requeteNonValide) {
 			requeteNonValide.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Fonction dans l'entreprise non trouvable"); 
@@ -190,6 +213,7 @@ public class FenetreLogin extends JFrame {
 	private JPanel panelPrincipal;
 	JTextField barreLogin;
 	JTextField barreMotDePasse;
+	
 
 	/**
 	 * Le main de FenetreLogin 
@@ -200,7 +224,7 @@ public class FenetreLogin extends JFrame {
 		EventQueue.invokeLater(() -> {
 			try {
 				FenetreLogin maFenetrePourLogin = null;
-				maFenetrePourLogin = new FenetreLogin();
+				maFenetrePourLogin = new FenetreLogin(args);
 				maFenetrePourLogin.setVisible(true);
 
 			} catch (Exception crashFenetre) {
@@ -214,8 +238,9 @@ public class FenetreLogin extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param args 
 	 */
-	public FenetreLogin() {
+	public FenetreLogin(String[] args) {
 
 		panelPrincipal = new JPanel();
 		setContentPane(panelPrincipal);
@@ -224,6 +249,7 @@ public class FenetreLogin extends JFrame {
 		panelPrincipal.setLayout(null);
 		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.setTitle("Login");
+		this.setLocationRelativeTo(null);
 
 		JLabel loginText = null;
 		JLabel motDePasseText = null;
@@ -239,7 +265,6 @@ public class FenetreLogin extends JFrame {
 		loginText.setFont(new Font(font, Font.BOLD, 13));
 		motDePasseText.setFont(new Font(font, Font.BOLD, 13));
 		boutonSeConnecter.setFont(new Font(font, Font.BOLD, 16));
-
 
 		loginText.setBounds(44, 22, 56, 20);
 		motDePasseText.setBounds(10, 64, 87, 20);
@@ -261,15 +286,16 @@ public class FenetreLogin extends JFrame {
 
 			try {
 				fonctionDansLentreprise = fonctionDeLEmployeDansLEntreprise(Hash.hashage(barreMotDePasse.getText(),"SHA3-256"));
-
+				args[0] = idDeLEmployeDansLEntreprise(barreLogin.getText());
+				
 				if(Boolean.TRUE.equals((premierConnectionAuCompte()))) {
-					FenetreDonnePriveEtSensible.main(null);
+					FenetreDonnePriveEtSensible.main(args);
 					FenetreLogin.this.dispose();
 					sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
 				}
 
 				else if(fonctionDansLentreprise != null) {
-					accedeASonDepartement(fonctionDansLentreprise);
+					accedeASonDepartement(args, fonctionDansLentreprise);
 				}
 
 				else {

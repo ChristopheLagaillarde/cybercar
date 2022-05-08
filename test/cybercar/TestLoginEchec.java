@@ -21,7 +21,7 @@ class TestLoginEchec {
 
 
 			connectionBDPourLogin = new ConnectionFactory("Cybercar","root","");
-			testMauvaisLogin = new FenetreLogin();
+			testMauvaisLogin = new FenetreLogin(null);
 
 			testMauvaisLogin.barreLogin.setText("mauvaisLogin@cybercar.com");
 			testMauvaisLogin.barreMotDePasse.setText("mauvaisMDP");
