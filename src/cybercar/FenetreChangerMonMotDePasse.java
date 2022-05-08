@@ -55,6 +55,9 @@ public class FenetreChangerMonMotDePasse extends JFrame {
 		JLabel nouveauMdpEcrit = null;
 		JLabel ResaisirNouveauMdpEcrit = null;
 		JButton boutonValider = null;
+		
+		Font styleEcriture = new Font("Arial", Font.BOLD, 18);
+
 
 		MdpEcrit = new JLabel("MDP actuel");
 		nouveauMdpEcrit = new JLabel("Nouveau MDP");
@@ -64,11 +67,14 @@ public class FenetreChangerMonMotDePasse extends JFrame {
 		final JTextField barreResaisirNouveauMdp = new JPasswordField();;
 		boutonValider = new JButton("Valider");
 
-		MdpEcrit.setFont(new Font("Arial", Font.BOLD, 18));
-		nouveauMdpEcrit.setFont(new Font("Arial", Font.BOLD, 18));
-		ResaisirNouveauMdpEcrit.setFont(new Font("Arial", Font.BOLD, 18));
-		boutonValider.setFont(new Font("Arial", Font.BOLD, 18));
-
+		MdpEcrit.setFont(styleEcriture);
+		nouveauMdpEcrit.setFont(styleEcriture);
+		ResaisirNouveauMdpEcrit.setFont(styleEcriture);
+		boutonValider.setFont(styleEcriture);
+		barreMdp.setFont(styleEcriture);
+		barreSaisirNouveauMdp.setFont(styleEcriture);
+		barreResaisirNouveauMdp.setFont(styleEcriture);
+		
 		barreMdp.setColumns(10);
 		barreSaisirNouveauMdp.setColumns(10);
 		barreResaisirNouveauMdp.setColumns(10);

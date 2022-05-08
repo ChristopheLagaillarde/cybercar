@@ -66,6 +66,8 @@ public class FenetreGererDroit extends JFrame {
 		String nomBDD = "cybercar";
 		String username = "root";
 		String motDePasseBDD = "";
+		
+		Font styleEcriture = new Font("Arial", Font.BOLD, 18);
 
 		gererLesDroitsEcrits = new JLabel("Gérer les droits ");
 		idEmployeEcrit = new JLabel("Id employé");
@@ -76,14 +78,15 @@ public class FenetreGererDroit extends JFrame {
 		final JComboBox menuDeroulantFonction =  new JComboBox(fonctionEmploye);
 		final JTextField barreIdEmploye = new JTextField();
 		final JComboBox menuDeroulantDepartement = new JComboBox(departementEmploye);
-		menuDeroulantFonction.setFont(new Font("Arial", Font.BOLD, 18));;
+		menuDeroulantFonction.setFont(styleEcriture);;
 
-		gererLesDroitsEcrits.setFont(new Font("Arial", Font.BOLD, 18));
-		idEmployeEcrit.setFont(new Font("Arial", Font.BOLD, 18));
-		nouvelleFonctionEcrit.setFont(new Font("Arial", Font.BOLD, 18));
-		boutonValider.setFont(new Font("Arial", Font.BOLD, 18));
-		menuDeroulantDepartement.setFont(new Font("Arial", Font.BOLD, 18));
-		nouveauDepartementEcrit.setFont(new Font("Arial", Font.BOLD, 18));
+		barreIdEmploye.setFont(styleEcriture);
+		gererLesDroitsEcrits.setFont(styleEcriture);
+		idEmployeEcrit.setFont(styleEcriture);
+		nouvelleFonctionEcrit.setFont(styleEcriture);
+		boutonValider.setFont(styleEcriture);
+		menuDeroulantDepartement.setFont(styleEcriture);
+		nouveauDepartementEcrit.setFont(styleEcriture);
 
 		gererLesDroitsEcrits.setBounds(149, 0, 148, 36);
 		idEmployeEcrit.setBounds(10, 58, 115, 36);

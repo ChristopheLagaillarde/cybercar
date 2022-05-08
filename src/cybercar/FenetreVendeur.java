@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 import javax.swing.JButton;
+import java.awt.Font;
 /**
  * Fenetre vendeur permettant aux vendeur d'effectuer des ventes etc
  * @author Lagaillarde
@@ -21,6 +22,7 @@ public class FenetreVendeur extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel panelPrincipal;
+	private JButton boutonModifierMDP_1;
 
 	/**
 	 * Le main de FenetreRH
@@ -50,17 +52,25 @@ public class FenetreVendeur extends JFrame {
 		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panelPrincipal);
 		panelPrincipal.setLayout(null);
-
+		
+		JButton boutonConfirmerVente = null;
 		JButton boutonModifierMDP = null;
 
-
+		boutonConfirmerVente = new JButton("Confirmer une vente");
 		boutonModifierMDP = new JButton("Modifier mon mot de passe");
 
+		boutonConfirmerVente.setFont(new Font("Arial", Font.BOLD, 18));
+		boutonModifierMDP.setFont(new Font("Arial", Font.BOLD, 18));
 
+		boutonConfirmerVente.setBounds(33, 11, 366, 42);
 		boutonModifierMDP.setBounds(33, 192, 366, 42);
 
-
+		panelPrincipal.add(boutonConfirmerVente);
 		panelPrincipal.add(boutonModifierMDP);
+
+		boutonConfirmerVente.addActionListener((clickBoutton -> 
+		FenetreConfirmationVente.main(args)
+				));
 
 		boutonModifierMDP.addActionListener((clickBoutton -> 
 		FenetreChangerMonMotDePasse.main(args)
