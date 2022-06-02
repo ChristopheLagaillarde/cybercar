@@ -22,7 +22,6 @@ public class FenetreVendeur extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel panelPrincipal;
-	private JButton boutonModifierMDP_1;
 
 	/**
 	 * Le main de FenetreRH

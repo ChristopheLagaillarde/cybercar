@@ -5,7 +5,23 @@ public class RequeteSQLCyberCar {
 	private RequeteSQLCyberCar(){
 		
 	}
-
+	
+	public static final String SELECT_INFORMATION_VOITURE(String idVoiture) {
+		return "SELECT Marque, Modèle, Couleur, Année_de_production, Transmission, Type_de_carburant, Date_de_livraison, Prix FROM `voiture` WHERE id_voiture = '"+ idVoiture + "';";
+	}
+	
+	public static final String SELECT_NOM_PRENOM_EMPLOYE(String idEmploye) {
+		return "SELECT nom, prenom FROM `employe` WHERE id_employé = '"+ idEmploye + "';";
+	}
+	
+	public static final String SELECT_NOM_PRENOM_CLIENT(String idClient) {
+		return "SELECT nom, prenom FROM `client` WHERE id_client = '"+ idClient + "';";
+	}
+	
+	public static final String SELECT_TOUTES_VOITURES() {
+		return "SELECT * FROM `voiture` ;";
+	}
+	
 	public static final String SELECT_LA_FONCTION_DE_LUTILISATEUR(String login, String motDePasseHashe) {
 		return "SELECT fonction FROM login WHERE mail = '" + login + "' AND motDePasse = '"+ motDePasseHashe +"';";
 	}
@@ -46,5 +62,9 @@ public class RequeteSQLCyberCar {
 	public static final String UPDATE_DEPARTEMENT_UTILISATEUR_TABLE_EMPLOYE(String idEmploye, String nouveauDepartement) {
 		return "UPDATE employe SET departement='"+ nouveauDepartement + "' WHERE id_employé = '"+ idEmploye +"';";
 				
+	}
+	
+	public static final String DELETE_VOITURE_TABLE_VOITURE(String idVoiture) {
+		return "DELETE FROM voiture WHERE `id_voiture` = '" + idVoiture + "';";
 	}
 }

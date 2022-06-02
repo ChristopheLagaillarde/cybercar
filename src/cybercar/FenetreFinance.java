@@ -1,16 +1,15 @@
 package cybercar;
 
 import java.awt.EventQueue;
+import java.awt.Font;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
-
-import java.awt.Font;
 /**
  * A MODIFIER/REMPLACER PLUS TARD
  * Fenetre pour le departement RH
@@ -23,7 +22,7 @@ public class FenetreFinance extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel panelPrincipal;
+	private JPanel contenuDeLaFenetre;
 
 	/**
 	 * Le main de FenetreRH
@@ -34,7 +33,7 @@ public class FenetreFinance extends JFrame {
 
 			try {
 				FenetreFinance moduleFinance = null;
-				moduleFinance = new FenetreFinance();
+				moduleFinance = new FenetreFinance(args);
 				moduleFinance.setVisible(true);
 			} catch (Exception crashFenetre) {
 				JOptionPane.showMessageDialog(null, "Erreur au niveau de la fenêtre");
@@ -46,18 +45,30 @@ public class FenetreFinance extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FenetreFinance() {
+	public FenetreFinance(String[] args) {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-		panelPrincipal = new JPanel();
-		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(panelPrincipal);
-		panelPrincipal.setLayout(null);
+		contenuDeLaFenetre = new JPanel();
+		contenuDeLaFenetre.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contenuDeLaFenetre);
+		contenuDeLaFenetre.setLayout(null);
+		
+		JButton boutonVoirLogVente = null;
+		
+		Font styleEcriture = new Font("Arial", Font.BOLD, 18);
+		
+		boutonVoirLogVente = new JButton("Voir log vente");
+		
+		boutonVoirLogVente.setFont(styleEcriture);
+		
+		boutonVoirLogVente.setBounds(53, 201, 298, 49);
+		
+		contenuDeLaFenetre.add(boutonVoirLogVente);
+		
+		boutonVoirLogVente.addActionListener(clickBouton ->{
+			FenetreVoirLogVente.main(args);
+		});
 
-		JLabel adminFinanceEcrit = new JLabel("Finance");
-		adminFinanceEcrit.setFont(new Font("Tahoma", Font.PLAIN, 27));
-		adminFinanceEcrit.setBounds(174, 113, 173, 86);
-		panelPrincipal.add(adminFinanceEcrit);
+
 	}
-
 }
