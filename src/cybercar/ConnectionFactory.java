@@ -40,7 +40,7 @@ public class ConnectionFactory {
 	 */
 	public ConnectionFactory(String nomBD, String username, String pwd){
 		try {
-			this.connectionABD= DriverManager.getConnection("jdbc:mysql://localhost:3306/"+ nomBD,username,pwd);
+			this.connectionABD= DriverManager.getConnection("jdbc:mysql://sql11.freesqldatabase.com/"+ nomBD,username,pwd);
 			this.requeteAFaire = this.connectionABD.createStatement();
 
 		} catch (SQLException echecDeConnection) {

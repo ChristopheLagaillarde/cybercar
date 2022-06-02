@@ -63,9 +63,9 @@ public class FenetreGererDroit extends JFrame {
 		String[] fonctionEmploye = {"vendeur","employeRH","garagiste","employeFinance", "sans fonction"};
 		String[] departementEmploye = {"vente","RH","garage", "finance"};
 
-		String nomBDD = "cybercar";
-		String username = "root";
-		String motDePasseBDD = "";
+		String nomBDD = "sql11497241";
+		String username = "sql11497241";
+		String motDePasseBDD = "9B2cyk9VAv";
 		
 		Font styleEcriture = new Font("Arial", Font.BOLD, 18);
 

@@ -25,38 +25,38 @@ import javax.swing.WindowConstants;
 public class FenetreLogin extends JFrame {
 
 	String adresseFichierLog = "logLogin.cryp";
-	String nomBDD = "cybercar";
-	String username = "root";
-	String motDePasseBDD = "";
+	String nomBDD = "sql11497241";//"cybercar";
+	String username = "sql11497241";//"root";
+	String motDePasseBDD = "9B2cyk9VAv"; //"";
 
 	/**
 	 * Renvoie vers le bon département
 	 * @param fonctionDansLentreprise
 	 */
-	void accedeASonDepartement(String[] args, String fonctionDansLentreprise) {
+	void accedeASonDepartement(String[] DonneUtilisateur, String fonctionDansLentreprise) {
 		
 		if(fonctionDansLentreprise.equals("vendeur")) {
-			FenetreVendeur.main(args);
+			FenetreVendeur.main(DonneUtilisateur);
 		}
 
 		if(fonctionDansLentreprise.equals("adminSystem")) {
-			FenetreAdminSystem.main(args);
+			FenetreAdminSystem.main(DonneUtilisateur);
 		}
 
 		if(fonctionDansLentreprise.equals("employeRH")) {
-			GestionRH.main(args);
+			GestionRH.main(DonneUtilisateur);
 		}
 
 		if(fonctionDansLentreprise.equals("garagiste")) {
-			Entrepot.main(args);
+			Entrepot.main(DonneUtilisateur);
 		}
 
 		if(fonctionDansLentreprise.equals("employeFinance")) {
-			FenetreFinance.main(args);
+			FenetreFinance.main(DonneUtilisateur);
 		}
 
 		if(fonctionDansLentreprise.equals("employeSI")) {
-			FenetreSI.main(args);
+			FenetreSI.main(DonneUtilisateur);
 		}
 		GererFichier.sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
 		FenetreLogin.this.dispose();
@@ -219,16 +219,17 @@ public class FenetreLogin extends JFrame {
 
 			try {
 				fonctionDansLentreprise = fonctionDeLEmployeDansLEntreprise(Hash.hashage(barreMotDePasse.getText(),"SHA3-256"));
-				args[0] = idDeLEmployeDansLEntreprise(barreLogin.getText());
+				String[] DonneUtilisateur = {"",""};
+				DonneUtilisateur[0] = idDeLEmployeDansLEntreprise(barreLogin.getText());
 				
 				if(Boolean.TRUE.equals((premierConnectionAuCompte()))) {
-					FenetreDonnePriveEtSensible.main(args);
+					FenetreDonnePriveEtSensible.main(DonneUtilisateur);
 					FenetreLogin.this.dispose();
 					GererFichier.sauvegarderLoginDansFichierLog(adresseFichierLog, barreLogin.getText(), true);
 				}
 
 				else if(fonctionDansLentreprise != null) {
-					accedeASonDepartement(args, fonctionDansLentreprise);
+					accedeASonDepartement(DonneUtilisateur, fonctionDansLentreprise);
 				}
 
 				else {

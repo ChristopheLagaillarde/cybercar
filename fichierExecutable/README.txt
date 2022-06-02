@@ -1,3 +1,2 @@
-Le log sera amélioré et intégré au système plus tard. 
-Le fichier "cybercar.exe" et "logLogin.txt" doivent être dans le même 
-répertoire ou alors un nouveau "logLogin.txt" sera crée
+Veillez mettre tout les fichiers dans le même répertoire pour que le programme fonctionne correctement
+Veillez faire preuve de patience car la base de donnée en ligne utilisé est très lente (étant gratuite)
