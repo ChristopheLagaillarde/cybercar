@@ -40,7 +40,7 @@ public class FenetreVoirLog extends JFrame {
 	 */
 	public FenetreVoirLog() {
 		String motDePasse = "uSD*m$n3Vab^@HDy";
-		String adresseFichierContenantCle = "cleSymetrique.ks";
+		String adresseFichierContenantCle = "src\\cybercar\\cleSymetrique.ks";
 		Key cleSymetrique = GererCleCryptographie.recuperationCleSymetrique(adresseFichierContenantCle, motDePasse);
 		String messageDechiffre = ApiFileCipher.dechiffrerFichierTexte("logLogin.cryp",cleSymetrique);
 	

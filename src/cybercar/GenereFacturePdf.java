@@ -23,9 +23,9 @@ public class GenereFacturePdf {
 	static String[] informationVoiture(String idVoiture) {
 
 		String[] informationVoiture = {"Voiture non existante", "Modèle", "Couleur", "Années_de_production", "Transmission", "Type_de_carburant", "Prix"};
-		String nomBDD = "sql11497241";
-		String username = "sql11497241";
-		String motDePasseBDD = "9B2cyk9VAv";
+		String nomBDD = "cybercar";//"sql11497241";
+		String username = "root";//"sql11497241";
+		String motDePasseBDD = "";//"9B2cyk9VAv";
 
 		ConnectionFactory connectionBDTrouverInformationVoiture = null;
 		ResultSet resultatSelectVoiture = null;
@@ -55,9 +55,9 @@ public class GenereFacturePdf {
 	String[] nomPrenomEmploye(String idEmploye) {
 
 		String [] listeNomPrenomEmploye = {"Employe inexistant", "Employe inexistant"};
-		String nomBDD = "sql11497241";
-		String username = "sql11497241";
-		String motDePasseBDD = "9B2cyk9VAv";
+		String nomBDD = "cybercar";//"sql11497241";
+		String username = "root";//"sql11497241";
+		String motDePasseBDD = "";//"9B2cyk9VAv";
 
 		ConnectionFactory connectionBDRecupererNomPrenomEmploye = null;
 		ResultSet resultatSelectEmploye = null;
@@ -81,9 +81,9 @@ public class GenereFacturePdf {
 	static String[] nomPrenomClient(String idClient) {
 
 		String [] listeNomPrenomClient = {"Client inexistant", "Client inexistant"};
-		String nomBDD = "sql11497241";
-		String username = "sql11497241";
-		String motDePasseBDD = "9B2cyk9VAv";
+		String nomBDD = "cybercar";//"sql11497241";
+		String username = "root";//"sql11497241";
+		String motDePasseBDD = "";//"9B2cyk9VAv";
 
 		ConnectionFactory connectionBDRecupererNomPrenomClient = null;
 		ResultSet resultatSelectClient = null;
@@ -115,7 +115,7 @@ public class GenereFacturePdf {
 
 		GenereFacturePdf genereFacture = new GenereFacturePdf();
 
-		String adresseFichierPdf = "Facture.pdf";
+		String adresseFichierPdf = "Factures\\Facture.pdf";
 		genereFacture.creePdf(adresseFichierPdf, idClient, idEmploye, idVoiture, informationVoiture(idVoiture));
 
 	}
@@ -223,7 +223,7 @@ public class GenereFacturePdf {
 			creeEntete(contenueFichierEnByte,502,633,"Prix");
 
 			//ajout du logo
-			Image logoCybercar = Image.getInstance("cybercarLogo.jpg");
+			Image logoCybercar = Image.getInstance("img\\cybercarLogo.jpg");
 			logoCybercar.setAbsolutePosition(25,700);
 			logoCybercar.scalePercent(25);
 			documentPdf.add(logoCybercar);

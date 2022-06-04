@@ -55,9 +55,9 @@ public class FenetreConfirmationVente extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contenuFenetre;
-	String nomBDD = "sql11497241";
-	String username = "sql11497241";
-	String motDePasseBDD = "9B2cyk9VAv";
+	String nomBDD = "cybercar";//"sql11497241";
+	String username = "root";//"sql11497241";
+	String motDePasseBDD = "";//"9B2cyk9VAv";
 	private JTable tableauVoiture;
 
 	/**

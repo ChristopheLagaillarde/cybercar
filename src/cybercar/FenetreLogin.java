@@ -25,9 +25,9 @@ import javax.swing.WindowConstants;
 public class FenetreLogin extends JFrame {
 
 	String adresseFichierLog = "logLogin.cryp";
-	String nomBDD = "sql11497241";//"cybercar";
-	String username = "sql11497241";//"root";
-	String motDePasseBDD = "9B2cyk9VAv"; //"";
+	String nomBDD = "cybercar";//"sql11497241";
+	String username = "root";//"sql11497241";
+	String motDePasseBDD = "";//"9B2cyk9VAv";
 
 	/**
 	 * Renvoie vers le bon département

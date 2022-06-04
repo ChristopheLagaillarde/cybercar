@@ -19,7 +19,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
 import com.toedter.calendar.JDateChooser;
 import net.proteanit.sql.DbUtils;
 import javax.swing.JTabbedPane;
@@ -119,21 +118,18 @@ public class GestionRH {
 	 */
 	private void initialize() {
 		secondFrame = new JFrame();
-		secondFrame.getContentPane().setBackground(new Color(25, 25, 112));
 		secondFrame.setBounds(100, 100, 1299, 787);
 		secondFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		secondFrame.getContentPane().setLayout(null);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(462, 10, 365, 82);
-		panel_3.setBackground(Color.ORANGE);
 		secondFrame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 		
 		JLabel lblNewLabel_8 = new JLabel("GESTION DES  EMPLOYES");
 		lblNewLabel_8.setBounds(37, 10, 286, 51);
 		panel_3.add(lblNewLabel_8);
-		lblNewLabel_8.setBackground(new Color(255, 200, 0));
 		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -142,7 +138,6 @@ public class GestionRH {
 		
 		panel_1 = new JPanel();
 		tabbedPane.addTab("New tab", null, panel_1, null);
-		panel_1.setBackground(new Color(230, 230, 250));
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Nom");
@@ -266,7 +261,6 @@ public class GestionRH {
 		});
 		
 		
-		rdbtnMonsieur.setBackground(new Color(230, 230, 250));
 		rdbtnMonsieur.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_1.add(rdbtnMonsieur);
 		
@@ -292,7 +286,6 @@ public class GestionRH {
 		
 		
 		
-		rdbtnMadame_1.setBackground(new Color(230, 230, 250));
 		rdbtnMadame_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel_1.add(rdbtnMadame_1);
 		
@@ -303,12 +296,10 @@ public class GestionRH {
 		
 		panel_2 = new JPanel();
 		panel_2.setBounds(21, 120, 335, 39);
-		panel_2.setBackground(new Color(230, 230, 250));
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Nom de jeune fille");
-		lblNewLabel_1_1_1.setBackground(new Color(230, 230, 250));
 		lblNewLabel_1_1_1.setBounds(10, 10, 140, 20);
 		panel_2.add(lblNewLabel_1_1_1);
 		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -416,7 +407,6 @@ public class GestionRH {
 				
 			}
 		});
-		btnNewButton_2.setBackground(new Color(0, 255, 127));
 		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		panel_1.add(btnNewButton_2);
 		
@@ -462,7 +452,6 @@ public class GestionRH {
 		JButton btnNouveaEmploye = new JButton("Nouveau employ\u00E9");
 		btnNouveaEmploye.setBounds(-174, -14, 121, 38);
 		panel_1.add(btnNouveaEmploye);
-		btnNouveaEmploye.setBackground(new Color(210, 180, 140));
 		btnNouveaEmploye.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
 		JTextField textiD = new JTextField();

@@ -33,7 +33,7 @@ public class GererFichier {
 		File fichierLogLogin = null;
 		FileWriter ecrireDansFichierLogLogin = null;
 		String motDePasse = "uSD*m$n3Vab^@HDy";
-		String adresseFichierContenantCle = "cleSymetrique.ks";
+		String adresseFichierContenantCle = "src\\cybercar\\cleSymetrique.ks";
 		String logConnectionChiffre = null;
 		String logConnection = null;
 
@@ -106,7 +106,7 @@ public class GererFichier {
 		ouvreFluxEcrireDansFichierLogVente = new BufferedWriter(ecrireDansFichierLogVente);
 		logVente = "\n\nDate : " + heureEtDateDeLaVente.format(maintenant) + "\nIdEmployé : " + idEmploye + "\nIdVoiture : " + idVoiture + "\nIdClient : " + idClient;
 		try {
-			PublicKey clePublic = GererCleCryptographie.recupererClePubliqueDansFichier("clePublique.ks");
+			PublicKey clePublic = GererCleCryptographie.recupererClePubliqueDansFichier("src\\cybercar\\clePublique.ks");
 			logVenteChiffre = GererCleCryptographie.crypteMessageAvecClePublique(logVente,clePublic);
 		} catch (Exception echecGenerationCleRSA) {
 			JOptionPane.showMessageDialog(null, "La clé RSA n'a pas pu être généré");
@@ -149,7 +149,7 @@ public class GererFichier {
 			lireDansFichierLogVente = new FileReader(fichierLogVente);
 			ouvreFluxLireDansFichierLogVente =  new BufferedReader(lireDansFichierLogVente); 
 			while ((ligneActuel = ouvreFluxLireDansFichierLogVente.readLine()) != null){ 
-				logVenteDechiffre += GererCleCryptographie.decrypteMessageAvecCleRSA(ligneActuel,GererCleCryptographie.recupererClePriveDansFichier("clePrive.ks"));
+				logVenteDechiffre += GererCleCryptographie.decrypteMessageAvecCleRSA(ligneActuel,GererCleCryptographie.recupererClePriveDansFichier("src\\cybercar\\clePrive.ks"));
 			}
 
 			ouvreFluxLireDansFichierLogVente.close();
